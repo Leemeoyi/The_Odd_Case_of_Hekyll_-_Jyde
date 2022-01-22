@@ -6,7 +6,7 @@ public class TestScript : MonoBehaviour
 {
 
     int speed;
-    bool running;
+    float sprint;
 
     // Start is called before the first frame update
     void Start()
