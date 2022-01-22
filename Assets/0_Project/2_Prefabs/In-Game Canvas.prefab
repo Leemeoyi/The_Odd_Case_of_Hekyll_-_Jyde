@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: XX
 --- !u!1 &1130764754048050386
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30
+  m_Text: XXX
 --- !u!1 &1130764754253326650
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 1130764754529059794}
   - component: {fileID: 1130764754529059796}
   - component: {fileID: 1130764754529059795}
+  - component: {fileID: 5784259936310549542}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -543,6 +544,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 00:00
+--- !u!114 &5784259936310549542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130764754529059793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086f09f53fc01994694b6a21f91a8e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130764754614647078
 GameObject:
   m_ObjectHideFlags: 0
