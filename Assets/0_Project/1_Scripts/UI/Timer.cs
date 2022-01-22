@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     Text timer;
-    float time = 0f;
 
     private void Awake() {
         timer = GetComponent<Text>();
@@ -17,8 +16,8 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        timer.text = timeFormater(time);
+        CoreManager.playTime += Time.deltaTime;
+        timer.text = timeFormater(CoreManager.playTime);
     }
 
     string timeFormater(float currentTime) {
@@ -29,7 +28,7 @@ public class Timer : MonoBehaviour
         string format = hours > 0
             ? "{0:00}:{1:00}:{2:00}"
             : "{1:00}:{2:00}";
-
+            
         return string.Format(format, hours, minutes, secs);
     }
 }
