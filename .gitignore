@@ -39,5 +39,8 @@ sysinfo.txt
 #Logs
 Logs/
 
-#UserSettings 
+#UserSettings
 UserSettings/
+
+# vs code preferences
+.vscode/
