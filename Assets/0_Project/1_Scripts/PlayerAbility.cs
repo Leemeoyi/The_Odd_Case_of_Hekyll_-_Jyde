@@ -6,16 +6,16 @@ public class PlayerAbility : MonoBehaviour
 {
 	public int potionNum;
 	public bool isHeckyll;
-	public bool canKill;
 
-    void Update()
-    {
+	GameObject collidedObj;
+
+	void Update()
+    {		
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
 			if (isHeckyll && potionNum > 0)
 			{
 				//drink_potion/becoming_DrJyde [Animation]
-				canKill = false;
 				isHeckyll = false;
 				potionNum -= 1;
 				Debug.Log("Drink potion. Turning into DrJyde");
@@ -24,7 +24,6 @@ public class PlayerAbility : MonoBehaviour
 			else if (!isHeckyll)
 			{
 				//becoming_Heckyll [Animation]
-				canKill = true;
 				isHeckyll = true;
 				Debug.Log("Turning into Heckyll");
 			}
@@ -35,5 +34,28 @@ public class PlayerAbility : MonoBehaviour
 			}
 		}
 
+		if (Input.GetKeyDown(KeyCode.E) && isHeckyll)
+		{
+			if (collidedObj != null)
+			{
+				Debug.Log("Destroy");
+				//still need to add only can kill citizen and not police.
+				//maybe use tag?
+				//if(other.gameObject.CompareTag("Citizen"))
+				Destroy(collidedObj);
+			}
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		print(message: "Enter collision");
+		collidedObj = col.gameObject;
+	}
+
+	void OnTriggerExit2D(Collider2D col)
+	{
+		print(message: "Exit collision");
+		collidedObj = null;
 	}
 }
