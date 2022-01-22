@@ -44,3 +44,4 @@ UserSettings/
 
 # vs code preferences
 .vscode/
+*.log
