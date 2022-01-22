@@ -57,13 +57,15 @@ public class CoreManager : MonoBehaviour {
 
     //#region Skill
     public void triggerSkill() {
-        if (skillCount > 0 && skillCountdown <= 0f) {
-            skillCount -= 1;
+        if (skillCount > 0) {
+            if (skillCountdown <= 0f) {
+                skillCount -= 1;
 
-            cooldownCoroutine = CooldownSkill();
-            StartCoroutine(cooldownCoroutine);
+                cooldownCoroutine = CooldownSkill();
+                StartCoroutine(cooldownCoroutine);
 
-            triggerSkillEvents.Invoke(skillCount.ToString());
+                triggerSkillEvents.Invoke(skillCount.ToString());
+            }
         } else {
             noMoreSkillEvents.Invoke();
         }
