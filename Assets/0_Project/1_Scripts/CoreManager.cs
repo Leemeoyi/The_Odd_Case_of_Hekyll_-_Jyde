@@ -42,6 +42,8 @@ public class CoreManager : MonoBehaviour {
     float skillCountdown = 0f;
     IEnumerator cooldownCoroutine;
 
+    bool isStop = false;
+
     // method
     void Awake() {
         state = GetComponent<CoreStateManager>();
@@ -55,7 +57,12 @@ public class CoreManager : MonoBehaviour {
     }
 
     //#region Skill
+    [ContextMenu("Runtime Only/Trigger Skill")]
     public void triggerSkill() {
+        if (isStop) {
+            return;
+        }
+
         if (skillCount > 0) {
             if (skillCountdown <= 0f) {
                 skillCount -= 1;
@@ -75,7 +82,12 @@ public class CoreManager : MonoBehaviour {
     }
     //#endregion
 
+    [ContextMenu("Runtime Only/Kill")]
     public void kill() {
+        if (isStop) {
+            return;
+        }
+
         folk -= 1;
         police += 1;
 
@@ -84,7 +96,13 @@ public class CoreManager : MonoBehaviour {
         }
     }
 
+    [ContextMenu("Runtime Only/Game Over")]
     public void gameOver() {
+        if (isStop) {
+            return;
+        }
+
+        isStop = true;
         gameOverEvents.Invoke();
         if (cooldownCoroutine != null) {
             StopCoroutine(cooldownCoroutine);

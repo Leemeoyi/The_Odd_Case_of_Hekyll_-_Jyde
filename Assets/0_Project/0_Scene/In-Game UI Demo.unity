@@ -261,15 +261,6 @@ MonoBehaviour:
   policeText: {fileID: 241849485}
   folkText: {fileID: 1716531739}
   skillSlider: {fileID: 1130764754966792113}
-  triggerSkillEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  noMoreSkillEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  killEvents:
-    m_PersistentCalls:
-      m_Calls: []
   gameOverEvents:
     m_PersistentCalls:
       m_Calls:
