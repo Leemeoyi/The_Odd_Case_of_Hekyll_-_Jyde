@@ -9,7 +9,11 @@ public class CoreManager : MonoBehaviour {
     [Header("UI")]
     public Text policeText;
     public Text folkText;
+
+    // Skill
     public Slider skillSlider;
+    public Image cooldownImg;
+    public Text cooldownText;
 
     [Header("Events")]
     public UnityEvent gameOverEvents;
@@ -74,12 +78,23 @@ public class CoreManager : MonoBehaviour {
         }
     }
 
+    // Might migrate to actual skill handling script
     IEnumerator CooldownSkill() {
+        skillSlider.gameObject.SetActive(false);
+        cooldownImg.gameObject.SetActive(true);
+
         skillCountdown = state.skillTime;
         while (skillCountdown > 0f) {
             skillCountdown -= 1.0f;
+
+            cooldownImg.fillAmount = skillCountdown / state.skillTime;;
+            cooldownText.text = Mathf.Abs(skillCountdown).ToString();
+
             yield return new WaitForSeconds(1.0f);
         }
+        
+        skillSlider.gameObject.SetActive(true);
+        cooldownImg.gameObject.SetActive(false);
     }
     //#endregion
 

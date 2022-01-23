@@ -217,6 +217,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086f09f53fc01994694b6a21f91a8e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &230259591 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3745377137844060365, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
+  m_PrefabInstance: {fileID: 1130764754966792112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &241849485 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1130764754028565661, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
@@ -261,6 +272,8 @@ MonoBehaviour:
   policeText: {fileID: 241849485}
   folkText: {fileID: 1716531739}
   skillSlider: {fileID: 1130764754966792113}
+  cooldownImg: {fileID: 1032881728}
+  cooldownText: {fileID: 230259591}
   gameOverEvents:
     m_PersistentCalls:
       m_Calls:
@@ -329,7 +342,18 @@ MonoBehaviour:
   police: 10
   folk: 30
   skillCount: 3
-  skillTime: 100
+  skillTime: 5
+--- !u!114 &1032881728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4679904242037662060, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
+  m_PrefabInstance: {fileID: 1130764754966792112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1525947891 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1130764754873633762, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
@@ -430,14 +454,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1130764754873633762, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1130764754873633764, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-      propertyPath: m_Text
-      value: Game State
-      objectReference: {fileID: 0}
     - target: {fileID: 1130764755804097988, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
       propertyPath: m_Name
       value: In-Game Canvas
@@ -524,26 +540,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1130764755804097994, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2085331145631237649, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2085331145631237649, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2085331145631237649, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3571211588222704099, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3632783014763813220, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7402311118205829054, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
