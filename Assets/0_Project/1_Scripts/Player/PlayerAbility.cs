@@ -7,15 +7,17 @@ public class PlayerAbility : MonoBehaviour
 	public int potionNum;
 	public bool isHeckyll;
 
+	public Sprite drJyde;
+	public Sprite heckyll;
 	GameObject collidedObj;
 
 	void Update()
-    {		
+	{		
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
 			if (isHeckyll && potionNum > 0)
 			{
-				//drink_potion/becoming_DrJyde [Animation]
+				this.gameObject.GetComponent<SpriteRenderer>().sprite = drJyde;
 				isHeckyll = false;
 				potionNum -= 1;
 				Debug.Log("Drink potion. Turning into DrJyde");
@@ -23,27 +25,29 @@ public class PlayerAbility : MonoBehaviour
 			}
 			else if (!isHeckyll)
 			{
-				//becoming_Heckyll [Animation]
+				this.gameObject.GetComponent<SpriteRenderer>().sprite = heckyll;
 				isHeckyll = true;
 				Debug.Log("Turning into Heckyll");
 			}
 			else
 			{
-				//should prompt player for the potion finshed
 				Debug.Log("Potion finished, " + potionNum);
 			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.E) && isHeckyll)
 		{
-			if (collidedObj != null)
+			if (collidedObj != null && collidedObj.tag == "folk")
 			{
 				Debug.Log("Destroy");
-				//still need to add only can kill citizen and not police.
-				//maybe use tag?
-				//if(other.gameObject.CompareTag("Citizen"))
-				Destroy(collidedObj);
+					Destroy(collidedObj);
 			}
+		}
+
+		if (collidedObj != null && collidedObj.tag == "police")
+		{
+			Debug.Log("Player die");
+			Destroy(gameObject);
 		}
 	}
 

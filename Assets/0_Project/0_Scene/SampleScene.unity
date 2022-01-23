@@ -394,8 +394,8 @@ GameObject:
   - component: {fileID: 1482951437}
   - component: {fileID: 1482951438}
   m_Layer: 0
-  m_Name: Citizen
-  m_TagString: Citizen
+  m_Name: Folk
+  m_TagString: folk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
