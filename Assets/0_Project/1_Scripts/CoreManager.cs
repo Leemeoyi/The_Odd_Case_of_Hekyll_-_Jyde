@@ -53,6 +53,7 @@ public class CoreManager : MonoBehaviour {
     void Start() {
         policeText.text = police.ToString();
         folkText.text = folk.ToString();
+        skillSlider.maxValue = skillCount;
         skillSlider.value = skillCount;
     }
 
