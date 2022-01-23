@@ -7,5 +7,6 @@ public class CoreStateManager : MonoBehaviour {
 
     [Header("Skill")]
     public int skillCount = 3;
+    [Tooltip("in sec")]
     public float skillTime = 100f;
 }

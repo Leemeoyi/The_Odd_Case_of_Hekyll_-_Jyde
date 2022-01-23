@@ -12,8 +12,7 @@ public class CoreManager : MonoBehaviour {
     public Slider skillSlider;
 
     [Header("Events")]
-    public UnityEvent<string> triggerSkillEvents;
-    public UnityEvent noMoreSkillEvents, killEvents, gameOverEvents;
+    public UnityEvent gameOverEvents;
 
     public static float playTime;
 
@@ -63,11 +62,7 @@ public class CoreManager : MonoBehaviour {
 
                 cooldownCoroutine = CooldownSkill();
                 StartCoroutine(cooldownCoroutine);
-
-                triggerSkillEvents.Invoke(skillCount.ToString());
             }
-        } else {
-            noMoreSkillEvents.Invoke();
         }
     }
 
@@ -83,7 +78,6 @@ public class CoreManager : MonoBehaviour {
     public void kill() {
         folk -= 1;
         police += 1;
-        killEvents.Invoke();
 
         if (folk <= 0) {
             gameOver();
@@ -92,6 +86,8 @@ public class CoreManager : MonoBehaviour {
 
     public void gameOver() {
         gameOverEvents.Invoke();
-        StopCoroutine(cooldownCoroutine);
+        if (cooldownCoroutine != null) {
+            StopCoroutine(cooldownCoroutine);
+        }
     }
 }
