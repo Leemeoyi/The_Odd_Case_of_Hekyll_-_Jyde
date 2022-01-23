@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - folk
+  - police
   layers:
   - Default
   - TransparentFX
