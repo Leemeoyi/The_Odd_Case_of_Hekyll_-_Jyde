@@ -44,10 +44,10 @@ public class PlayerAbility : MonoBehaviour
 			}
 		}
 
-		if (collidedObj != null && collidedObj.tag == "police")
+		if (isHeckyll && collidedObj != null && collidedObj.tag == "police")
 		{
 			Debug.Log("Player die");
-			Destroy(gameObject);
+			//Destroy(gameObject);
 		}
 	}
 
