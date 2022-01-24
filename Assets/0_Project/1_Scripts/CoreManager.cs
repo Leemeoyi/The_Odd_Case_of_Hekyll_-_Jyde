@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(CoreStateManager))]
 public class CoreManager : MonoBehaviour {
+    public static CoreManager instance;
+    
     [Header("UI")]
     public Text policeText;
     public Text folkText;
@@ -50,6 +52,7 @@ public class CoreManager : MonoBehaviour {
 
     // method
     void Awake() {
+        instance = CoreManager();
         state = GetComponent<CoreStateManager>();
         playTime = 0f;
     }
