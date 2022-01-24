@@ -6,39 +6,38 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class NodeTraversing : MonoBehaviour
+public class NodeManager : MonoBehaviour
 {
-    [SerializeField] List<GameObject> nodes;
-    public List<GameObject> Nodes { get => nodes; }
+    [SerializeField] List<Node> nodes;
+    public List<Node> Nodes { get => nodes; }
 
     [Button("Generate Node", enabledMode: EButtonEnableMode.Editor)]
     void GenerateNode()
     {
         if (nodes != null)
         {
-            foreach (GameObject gameObject in nodes)
+            foreach (Node node in nodes)
             {
-                DestroyImmediate(gameObject);
+                DestroyImmediate(node.gameObject);
             }
             nodes.Clear();
         }
         
-        nodes = new List<GameObject>();
+        nodes = new List<Node>();
         
         GameObject temp = new GameObject("Node" + nodes.Count, typeof(Node));
         temp.transform.SetParent(this.transform);
         temp.GetComponent<Node>().OnCreate();
-        nodes.Add(temp);
+        nodes.Add(temp.GetComponent<Node>());
     }
     
-    public GameObject AddNode(GameObject go)
+    public GameObject AddNode(GameObject node)
     {
         GameObject temp = new GameObject("Node" + nodes.Count, typeof(Node));
         temp.transform.SetParent(this.transform);
-        temp.GetComponent<Node>().OnCreate(temp);
-        temp.GetComponent<Node>().ConnectedNode.Add(go);
-        
-        nodes.Add(temp);
+        temp.GetComponent<Node>().OnCreate(node);
+
+        nodes.Add(temp.GetComponent<Node>());
         
         return temp;
     }

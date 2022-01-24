@@ -14,8 +14,8 @@ public class BaseAI : MonoBehaviour
 {
     protected NavMeshAgent agent;
     protected Animator anim;
-    [SerializeField] NodeTraversing nodeManager;
-    public NodeTraversing NodeManager { get => nodeManager; }
+    [SerializeField] NodeManager nodeManager;
+    public NodeManager NodeManager { get => nodeManager; }
 
     protected StateMachine stateMachine;
 

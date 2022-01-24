@@ -8,7 +8,10 @@ public class Wandering : IState
     readonly BaseAI baseAI;
     NavMeshAgent agent;
     Animator anim;
-    int rand = 0;
+    Transform destination;
+    bool Reached;
+
+    Node currentNode;
 
     public Wandering(BaseAI baseAI, NavMeshAgent agent, Animator anim)
     {
@@ -19,8 +22,22 @@ public class Wandering : IState
 
     public void OnEnter()
     {
-        rand = Random.Range(0, baseAI.NodeManager.Nodes.Count);
-        Debug.Log(rand);
+        Transform tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = baseAI.transform.position;
+        Reached = true;
+
+        foreach (var item in baseAI.NodeManager.Nodes)
+        {
+            float dist = Vector3.Distance(item.transform.position, currentPos);
+
+            if (dist < minDist)
+            {
+                tMin = item.transform;
+                minDist = dist;
+                currentNode = item;
+            }
+        }
     }
 
     public void OnExit()
@@ -30,6 +47,22 @@ public class Wandering : IState
 
     public void Tick()
     {
-        agent.SetDestination(baseAI.NodeManager.Nodes[rand].transform.position);
+        if (Reached == true)
+        {
+            int rand = Random.Range(0, currentNode.ConnectedNode.Count);
+            currentNode = currentNode.ConnectedNode[rand];
+            destination = currentNode.transform;
+            Reached = false;
+        }
+        else
+        {
+            agent.SetDestination(destination.position);
+            if (Vector2.Distance(baseAI.transform.position, destination.position) < 1.0f)
+            {
+                Reached = true;
+            }
+        }
     }
+
+
 }

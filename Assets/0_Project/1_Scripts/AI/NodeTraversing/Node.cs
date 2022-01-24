@@ -7,29 +7,33 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    NodeTraversing nodeManager;
+    NodeManager nodeManager;
     
-    [SerializeField] List<GameObject> connectedNode;
+    [SerializeField] List<Node> connectedNode;
 
-    public List<GameObject> ConnectedNode
+    public List<Node> ConnectedNode
     {
-        get { return connectedNode; }
-        set { connectedNode = value; }
+        get => connectedNode;
     }
 
 
     public void OnCreate(GameObject go)
     {
         this.gameObject.SetIcon(ShapeIcon.CircleBlue);
-        nodeManager = GetComponentInParent<NodeTraversing>();
-        connectedNode = new List<GameObject>();
-        connectedNode.Add(go);
+        nodeManager = GetComponentInParent<NodeManager>();
+        connectedNode = new List<Node>();
+        connectedNode.Add(go.GetComponent<Node>());
+    }
+
+    private void OnValidate()
+    {
+        nodeManager = GetComponentInParent<NodeManager>();
     }
 
     public void OnCreate()
     {
         this.gameObject.SetIcon(ShapeIcon.CircleBlue);
-        nodeManager = GetComponentInParent<NodeTraversing>();
+        nodeManager = GetComponentInParent<NodeManager>();
     }
     
 
@@ -38,19 +42,18 @@ public class Node : MonoBehaviour
     {
         if (connectedNode == null)
         {
-            connectedNode = new List<GameObject>();
+            connectedNode = new List<Node>();
         }
-        
         GameObject temp = nodeManager.AddNode(this.gameObject);
-        
-        connectedNode.Add(temp);
+
+        connectedNode.Add(temp.GetComponent<Node>());
     }
 
     void OnDrawGizmosSelected()
     {
         if (connectedNode != null)
         {
-            foreach (GameObject go in connectedNode)
+            foreach (var go in connectedNode)
             {
                 Debug.DrawLine(this.transform.position, go.transform.position, Color.blue);
             }
@@ -59,7 +62,7 @@ public class Node : MonoBehaviour
 
     public void Draw()
     {
-        foreach (GameObject go in connectedNode)
+        foreach (var go in connectedNode)
         {
             Debug.DrawLine(this.transform.position, go.transform.position, Color.blue);
         }
