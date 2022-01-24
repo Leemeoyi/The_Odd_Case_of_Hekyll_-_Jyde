@@ -170,9 +170,29 @@ public class CoreManager : MonoBehaviour
         Pause();
         gameOverEvents.Invoke();
 
+        if (folk > 0)
+        {
+            Loss();
+        }
+        else
+        {
+            Win();
+        }
+
+
         if (cooldownCoroutine != null)
         {
             StopCoroutine(cooldownCoroutine);
         }
+    }
+
+    void Win()
+    {
+        gameStateText.text = state.winText;
+    }
+
+    void Loss()
+    {
+        gameStateText.text = state.lossText;
     }
 }

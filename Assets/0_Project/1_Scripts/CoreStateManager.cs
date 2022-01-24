@@ -12,4 +12,10 @@ public class CoreStateManager : MonoBehaviour
     public int skillCount = 3;
     [Tooltip("in sec")]
     public float skillTime = 100f;
+
+    [Header("Game State")]
+    [Multiline]
+    public string winText;
+    [Multiline]
+    public string lossText;
 }
