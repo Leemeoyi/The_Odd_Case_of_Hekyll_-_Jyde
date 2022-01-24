@@ -2,64 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerCore), typeof(Rigidbody2D))]
 public class PlayerAbility : MonoBehaviour
 {
-	public int potionNum;
-	public bool isHeckyll;
-
 	public Sprite drJyde;
 	public Sprite heckyll;
-	GameObject collidedObj;
+
+	SpriteRenderer sr;
+	PlayerCore playerCore;
+
+	void Awake()
+	{
+		sr = GetComponent<SpriteRenderer>();
+		playerCore = GetComponent<PlayerCore>();
+	}
 
 	void Update()
 	{		
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
-			if (isHeckyll && potionNum > 0)
+			if (playerCore.IsHeckyll && playerCore.potionNum > 0)
 			{
-				this.gameObject.GetComponent<SpriteRenderer>().sprite = drJyde;
-				isHeckyll = false;
-				potionNum -= 1;
-				Debug.Log("Drink potion. Turning into DrJyde");
-				Debug.Log(potionNum);
+				sr.sprite = drJyde;
+				playerCore.IsHeckyll = false;
+				playerCore.potionNum--;
 			}
-			else if (!isHeckyll)
+			else if (!playerCore.IsHeckyll)
 			{
-				this.gameObject.GetComponent<SpriteRenderer>().sprite = heckyll;
-				isHeckyll = true;
-				Debug.Log("Turning into Heckyll");
+				sr.sprite = heckyll;
+				playerCore.IsHeckyll = true;
 			}
 			else
 			{
-				Debug.Log("Potion finished, " + potionNum);
+				Debug.Log("Potion finished, " + playerCore.potionNum);
 			}
 		}
-
-		if (Input.GetKeyDown(KeyCode.E) && isHeckyll)
-		{
-			if (collidedObj != null && collidedObj.tag == "folk")
-			{
-				Debug.Log("Destroy");
-					Destroy(collidedObj);
-			}
-		}
-
-		if (isHeckyll && collidedObj != null && collidedObj.tag == "police")
-		{
-			Debug.Log("Player die");
-			//Destroy(gameObject);
-		}
-	}
-
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		print(message: "Enter collision");
-		collidedObj = col.gameObject;
-	}
-
-	void OnTriggerExit2D(Collider2D col)
-	{
-		print(message: "Exit collision");
-		collidedObj = null;
 	}
 }
