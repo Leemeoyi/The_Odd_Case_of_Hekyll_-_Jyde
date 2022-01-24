@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &11048459 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1130764755491958127, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-  m_PrefabInstance: {fileID: 1130764754966792112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &56437391
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,17 +206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &177193015 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5784259936310549542, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-  m_PrefabInstance: {fileID: 1130764754966792112}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 086f09f53fc01994694b6a21f91a8e2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &230259591 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3745377137844060365, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
@@ -244,6 +228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &483638341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1130764754214561733, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
+  m_PrefabInstance: {fileID: 1130764754966792112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &802751555
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,16 +265,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   policeText: {fileID: 241849485}
   folkText: {fileID: 1716531739}
+  gameStateText: {fileID: 1525947893}
   skillSlider: {fileID: 1130764754966792113}
   cooldownImg: {fileID: 1032881728}
   cooldownText: {fileID: 230259591}
   gameOverEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 177193015}
-        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
-        m_MethodName: stop
-        m_Mode: 1
+      - m_Target: {fileID: 483638341}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -294,7 +284,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1525947891}
+      - m_Target: {fileID: 1130764754966792114}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -305,54 +295,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1525947893}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Game Over
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11048459}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 904833595}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1469251958}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &802751557
 Transform:
@@ -380,15 +322,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b30c4428ca0e834982fd8c3b937ccd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  police: 10
-  folk: 30
+  police: 1
+  folk: 3
   skillCount: 3
   skillTime: 30
---- !u!1 &904833595 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1130764754947514511, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-  m_PrefabInstance: {fileID: 1130764754966792112}
-  m_PrefabAsset: {fileID: 0}
+  winText: It is a win text. Should be a ultra super duper long description show
+    when win game.
+  lossText: It is a loss text. Should be a ultra super duper long description show
+    when loss game.
 --- !u!114 &1032881728 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4679904242037662060, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
@@ -400,22 +341,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1469251958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1145445034102539639, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-  m_PrefabInstance: {fileID: 1130764754966792112}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1525947891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1130764754873633762, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
-  m_PrefabInstance: {fileID: 1130764754966792112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1525947893 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1130764754873633764, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
   m_PrefabInstance: {fileID: 1130764754966792112}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525947891}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -674,3 +605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1130764754966792114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2286331617924093194, guid: 48a23e60f9a1b7c498123488233a633c, type: 3}
+  m_PrefabInstance: {fileID: 1130764754966792112}
+  m_PrefabAsset: {fileID: 0}
