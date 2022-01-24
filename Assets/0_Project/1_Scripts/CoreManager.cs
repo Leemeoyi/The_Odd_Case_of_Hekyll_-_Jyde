@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using NaughtyAttributes;
 
 [RequireComponent(typeof(CoreStateManager))]
-public class CoreManager : MonoBehaviour {
+public class CoreManager : MonoBehaviour
+{
     public static CoreManager instance;
 
     [Header("UI")]
     public Text policeText;
     public Text folkText;
+    public Text gameStateText;
 
     // Skill
     public Slider skillSlider;
@@ -24,35 +27,42 @@ public class CoreManager : MonoBehaviour {
 
     // private variable
     CoreStateManager state;
-    int police  {
+    int police
+    {
         get { return state.police; }
-        set {
+        set
+        {
             state.police = value;
             policeText.text = value.ToString();
         }
     }
-    int folk {
+    int folk
+    {
         get { return state.folk; }
-        set {
+        set
+        {
             state.folk = value;
             folkText.text = value.ToString();
         }
     }
-    int skillCount {
+    int skillCount
+    {
         get { return state.skillCount; }
-        set {
+        set
+        {
             state.skillCount = value;
             skillSlider.value = value;
         }
     }
+    float initialTimeScale;
     float skillCountdown = 0f;
     IEnumerator cooldownCoroutine;
 
     bool isStop = false;
 
     // method
-    void Awake() {
-
+    void Awake()
+    {
         if (instance != null)
             Destroy(this.gameObject);
         else
@@ -60,24 +70,47 @@ public class CoreManager : MonoBehaviour {
 
         state = GetComponent<CoreStateManager>();
         playTime = 0f;
+        initialTimeScale = Time.timeScale;
     }
 
-    void Start() {
+    void Start()
+    {
         policeText.text = police.ToString();
         folkText.text = folk.ToString();
         skillSlider.maxValue = skillCount;
         skillSlider.value = skillCount;
     }
 
+    void Update()
+    {
+        CoreManager.playTime += Time.deltaTime;
+    }
+
+    [Button]
+    public void Resume()
+    {
+        Time.timeScale = initialTimeScale;
+    }
+
+    [Button]
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
     //#region Skill
-    [ContextMenu("Runtime Only/Trigger Skill")]
-    public void triggerSkill() {
-        if (isStop) {
+    [Button]
+    public void TriggerSkill()
+    {
+        if (isStop)
+        {
             return;
         }
 
-        if (skillCount > 0) {
-            if (skillCountdown <= 0f) {
+        if (skillCount > 0)
+        {
+            if (skillCountdown <= 0f)
+            {
                 skillCount -= 1;
 
                 cooldownCoroutine = CooldownSkill();
@@ -87,49 +120,79 @@ public class CoreManager : MonoBehaviour {
     }
 
     // Might migrate to actual skill handling script
-    IEnumerator CooldownSkill() {
+    IEnumerator CooldownSkill()
+    {
         skillSlider.gameObject.SetActive(false);
         cooldownImg.gameObject.SetActive(true);
 
         skillCountdown = state.skillTime;
-        while (skillCountdown > 0f) {
+        while (skillCountdown > 0f)
+        {
             skillCountdown -= 1.0f;
 
-            cooldownImg.fillAmount = skillCountdown / state.skillTime;;
+            cooldownImg.fillAmount = skillCountdown / state.skillTime; ;
             cooldownText.text = Mathf.Abs(skillCountdown).ToString();
 
             yield return new WaitForSeconds(1.0f);
         }
-        
+
         skillSlider.gameObject.SetActive(true);
         cooldownImg.gameObject.SetActive(false);
     }
     //#endregion
 
-    [ContextMenu("Runtime Only/Kill")]
-    public void kill() {
-        if (isStop) {
+    [Button]
+    public void Kill()
+    {
+        if (isStop)
+        {
             return;
         }
 
         folk -= 1;
         police += 1;
 
-        if (folk <= 0) {
-            gameOver();
+        if (folk <= 0)
+        {
+            GameOver();
         }
     }
 
-    [ContextMenu("Runtime Only/Game Over")]
-    public void gameOver() {
-        if (isStop) {
+    [Button]
+    public void GameOver()
+    {
+        if (isStop)
+        {
             return;
         }
 
         isStop = true;
+        Pause();
         gameOverEvents.Invoke();
-        if (cooldownCoroutine != null) {
+
+        if (folk > 0)
+        {
+            Loss();
+        }
+        else
+        {
+            Win();
+        }
+
+
+        if (cooldownCoroutine != null)
+        {
             StopCoroutine(cooldownCoroutine);
         }
+    }
+
+    void Win()
+    {
+        gameStateText.text = state.winText;
+    }
+
+    void Loss()
+    {
+        gameStateText.text = state.lossText;
     }
 }
