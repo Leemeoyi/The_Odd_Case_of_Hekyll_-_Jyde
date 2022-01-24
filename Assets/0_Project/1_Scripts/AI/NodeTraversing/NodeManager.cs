@@ -8,8 +8,18 @@ using UnityEngine;
 
 public class NodeManager : MonoBehaviour
 {
+    public static NodeManager instance;
+
     [SerializeField] List<Node> nodes;
     public List<Node> Nodes { get => nodes; }
+
+    private void Awake()
+    {
+        if (instance != null)
+            Destroy(this.gameObject);
+        else
+            instance = this;
+    }
 
     [Button("Generate Node", enabledMode: EButtonEnableMode.Editor)]
     void GenerateNode()

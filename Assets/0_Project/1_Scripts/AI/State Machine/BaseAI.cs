@@ -14,13 +14,19 @@ public class BaseAI : MonoBehaviour
 {
     protected NavMeshAgent agent;
     protected Animator anim;
-    [SerializeField] NodeManager nodeManager;
+    NodeManager nodeManager;
     public NodeManager NodeManager { get => nodeManager; }
 
     protected StateMachine stateMachine;
 
     [SerializeField] float speed;
     public float Speed { get => speed; }
+
+    [SerializeField] float maxStandingDuration = 3.0f;
+    public float MaxStandingDuration { get => maxStandingDuration; }
+
+    [SerializeField] float minStandingDuration = 1.0f;
+    public float MinStandingDuration { get => minStandingDuration; }
 
     protected virtual void Awake()
     {
@@ -30,5 +36,9 @@ public class BaseAI : MonoBehaviour
         agent.updateUpAxis = false;
 
         stateMachine = new StateMachine();
+    }
+    protected virtual void Start()
+    {
+        nodeManager = NodeManager.instance;
     }
 }

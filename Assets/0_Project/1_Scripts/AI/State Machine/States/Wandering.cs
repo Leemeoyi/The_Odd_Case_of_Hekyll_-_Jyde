@@ -13,6 +13,10 @@ public class Wandering : IState
 
     Node currentNode;
 
+    float timer;
+    float timerTarget = 0.0f;
+
+
     public Wandering(BaseAI baseAI, NavMeshAgent agent, Animator anim)
     {
         this.baseAI = baseAI;
@@ -49,12 +53,18 @@ public class Wandering : IState
     {
         if (Reached == true)
         {
-            int rand = Random.Range(0, currentNode.ConnectedNode.Count);
-            currentNode = currentNode.ConnectedNode[rand];
-            destination = currentNode.transform.position;
-            destination += Random.insideUnitCircle * currentNode.NodeRadius;
+            timer += Time.deltaTime;
+            
+            if (timer > timerTarget)
+            {
+                int rand = Random.Range(0, currentNode.ConnectedNode.Count);
+                currentNode = currentNode.ConnectedNode[rand];
+                destination = currentNode.transform.position;
+                destination += Random.insideUnitCircle * currentNode.NodeRadius;
 
-            Reached = false;
+                Reached = false;
+            }
+ 
         }
         else
         {
@@ -62,6 +72,8 @@ public class Wandering : IState
             if (Vector2.Distance(baseAI.transform.position, destination) < 0.3f)
             {
                 Reached = true;
+                timer = 0.0f;
+                timerTarget = Random.Range(baseAI.MinStandingDuration, baseAI.MaxStandingDuration);
             }
         }
     }
