@@ -13,6 +13,7 @@ public class CoreManager : MonoBehaviour
     [Header("UI")]
     public Text policeText;
     public Text folkText;
+    public Text gameStateText;
 
     // Skill
     public Slider skillSlider;
@@ -78,6 +79,11 @@ public class CoreManager : MonoBehaviour
         folkText.text = folk.ToString();
         skillSlider.maxValue = skillCount;
         skillSlider.value = skillCount;
+    }
+
+    void Update()
+    {
+        CoreManager.playTime += Time.deltaTime;
     }
 
     [Button]
@@ -161,7 +167,9 @@ public class CoreManager : MonoBehaviour
         }
 
         isStop = true;
+        Pause();
         gameOverEvents.Invoke();
+
         if (cooldownCoroutine != null)
         {
             StopCoroutine(cooldownCoroutine);
