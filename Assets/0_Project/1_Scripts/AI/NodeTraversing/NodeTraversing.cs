@@ -9,6 +9,7 @@ using UnityEngine;
 public class NodeTraversing : MonoBehaviour
 {
     [SerializeField] List<GameObject> nodes;
+    public List<GameObject> Nodes { get => nodes; }
 
     [Button("Generate Node", enabledMode: EButtonEnableMode.Editor)]
     void GenerateNode()
@@ -47,11 +48,4 @@ public class NodeTraversing : MonoBehaviour
         
     }
 
-    void OnDrawGizmosSelected()
-    {
-        foreach (var go in nodes)
-        {
-            go.GetComponent<Node>().Draw();
-        }
-    }
 }
