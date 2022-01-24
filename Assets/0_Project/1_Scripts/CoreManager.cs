@@ -52,7 +52,12 @@ public class CoreManager : MonoBehaviour {
 
     // method
     void Awake() {
-        instance = new CoreManager();
+
+        if (instance != null)
+            Destroy(this.gameObject);
+        else
+            instance = this;
+
         state = GetComponent<CoreStateManager>();
         playTime = 0f;
     }
