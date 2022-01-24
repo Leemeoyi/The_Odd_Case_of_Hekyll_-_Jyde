@@ -11,6 +11,9 @@ public class Node : MonoBehaviour
     
     [SerializeField] List<Node> connectedNode;
 
+    [SerializeField] float nodeRadius = 1f;
+    public float NodeRadius { get => nodeRadius; }
+
     public List<Node> ConnectedNode
     {
         get => connectedNode;
@@ -58,6 +61,9 @@ public class Node : MonoBehaviour
                 Debug.DrawLine(this.transform.position, go.transform.position, Color.blue);
             }
         }
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, nodeRadius);
     }
 
     public void Draw()

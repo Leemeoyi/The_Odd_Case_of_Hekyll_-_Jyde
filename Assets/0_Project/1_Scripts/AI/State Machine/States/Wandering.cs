@@ -8,7 +8,7 @@ public class Wandering : IState
     readonly BaseAI baseAI;
     NavMeshAgent agent;
     Animator anim;
-    Transform destination;
+    Vector2 destination;
     bool Reached;
 
     Node currentNode;
@@ -51,13 +51,15 @@ public class Wandering : IState
         {
             int rand = Random.Range(0, currentNode.ConnectedNode.Count);
             currentNode = currentNode.ConnectedNode[rand];
-            destination = currentNode.transform;
+            destination = currentNode.transform.position;
+            destination += Random.insideUnitCircle * currentNode.NodeRadius;
+
             Reached = false;
         }
         else
         {
-            agent.SetDestination(destination.position);
-            if (Vector2.Distance(baseAI.transform.position, destination.position) < 1.0f)
+            agent.SetDestination(destination);
+            if (Vector2.Distance(baseAI.transform.position, destination) < 0.3f)
             {
                 Reached = true;
             }

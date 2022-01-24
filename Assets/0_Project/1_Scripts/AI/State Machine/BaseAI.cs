@@ -19,6 +19,9 @@ public class BaseAI : MonoBehaviour
 
     protected StateMachine stateMachine;
 
+    [SerializeField] float speed;
+    public float Speed { get => speed; }
+
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
