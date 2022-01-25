@@ -9,13 +9,14 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
 
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
     PlayerCore playerCore;
     Vector2 movement;
 
     void Awake()
     {
         playerCore = GetComponent<PlayerCore>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()

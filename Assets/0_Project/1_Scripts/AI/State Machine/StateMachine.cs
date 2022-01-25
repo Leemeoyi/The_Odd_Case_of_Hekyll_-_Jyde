@@ -47,12 +47,12 @@ public class StateMachine
 
     public void AddTransition(IState from, IState to, Func<bool> predicate)
     {
-        if (transitions.TryGetValue(from.GetType(), out var _transitions) == false)
+        if (transitions.TryGetValue(to.GetType(), out var _transitions) == false)
         {
             _transitions = new List<Transition>();
-            transitions[from.GetType()] = _transitions;
+            transitions[to.GetType()] = _transitions;
 
-            _transitions.Add(new Transition(to, predicate));
+            _transitions.Add(new Transition(from, predicate));
         }
     }
 

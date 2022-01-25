@@ -26,6 +26,8 @@ public class Wandering : IState
 
     public void OnEnter()
     {
+        if (currentNode != null) return;
+        
         Transform tMin = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = baseAI.transform.position;
