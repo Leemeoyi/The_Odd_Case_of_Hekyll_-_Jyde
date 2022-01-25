@@ -12,18 +12,17 @@ public class Chase : IState
 
     float originalSpeed;
 
-    public Chase(Police baseAI, NavMeshAgent agent, Animator anim, PlayerCore playercore)
+    public Chase(Police policeAI, NavMeshAgent agent, Animator anim, PlayerCore playercore)
     {
-        this.policeAI = baseAI;
+        this.policeAI = policeAI;
         this.agent = agent;
         this.anim = anim;
         this.playercore = playercore;
-        originalSpeed = baseAI.Speed;
+        originalSpeed = policeAI.Speed;
     }
     
     public void OnEnter()
     {
-        Debug.Log("Chasing");
         agent.speed = policeAI.ChaseSpeed;
     }
 

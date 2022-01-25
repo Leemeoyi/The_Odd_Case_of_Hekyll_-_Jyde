@@ -17,6 +17,7 @@ public class PlayerCore : MonoBehaviour
     public GameObject CollidedObj
     {
         get => collidedObj;
+        set => collidedObj = value;
     }
 
     private void Update()
@@ -25,27 +26,11 @@ public class PlayerCore : MonoBehaviour
         {
             Destroy(CollidedObj);
         }
-    }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("folk"))
+        if (collidedObj != null)
         {
-            collidedObj = col.gameObject;
-        }
-
-        if (col.gameObject.CompareTag("police"))
-        {
-            gameObject.SetActive(false);
+            print("yeah");
         }
     }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("folk"))
-        {
-            collidedObj = null;
-        }
-    }
-
+    
 }

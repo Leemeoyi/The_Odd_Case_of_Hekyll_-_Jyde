@@ -9,6 +9,8 @@ public class Police : BaseAI
 
     PlayerCore pc;
     [SerializeField] float chaseSpeed;
+    [SerializeField] float outerDetectionRadius = 3.0f;
+    [SerializeField] float innerDetectionRadius = 1.5f;
 
     public float ChaseSpeed => chaseSpeed;
 
@@ -23,6 +25,7 @@ public class Police : BaseAI
         base.Awake();
 
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCore>();
+
     }
 
     protected override void Start()
@@ -46,11 +49,37 @@ public class Police : BaseAI
 
     private void Update()
     {
+        if (Vector2.Distance(pc.transform.position, transform.position) < innerDetectionRadius)
+        {
+            pc.gameObject.SetActive(false);
+            print("Caught the player");
+        }
+        
         stateMachine.Tick();
-
-        print(isOverlapped);
     }
 
+    void FixedUpdate()
+    {
+        
+        if (isOverlapped)
+        {
+            LayerMask layerMask = LayerMask.GetMask("Default");
+            Debug.DrawLine(this.transform.position, pc.transform.position, Color.red);
+            RaycastHit2D hit = Physics2D.Linecast(transform.position, pc.transform.position, layerMask);
+
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                isOnSight = true;
+                print("HIT!");
+            }
+            else
+            {
+                isOnSight = false;
+                print(hit.collider.gameObject.name);
+
+            }
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -66,5 +95,20 @@ public class Police : BaseAI
         {
             isOverlapped = false;
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, outerDetectionRadius);
+        
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, innerDetectionRadius);
+        
+    }
+
+    void OnValidate()
+    {
+        GetComponent<CircleCollider2D>().radius = outerDetectionRadius;
     }
 }

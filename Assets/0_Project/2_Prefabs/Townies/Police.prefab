@@ -144,6 +144,8 @@ MonoBehaviour:
   maxStandingDuration: 3
   minStandingDuration: 1
   chaseSpeed: 4
+  outerDetectionRadius: 5.34
+  innerDetectionRadius: 2.54
 --- !u!50 &5554547761808460584
 Rigidbody2D:
   serializedVersion: 4
@@ -180,4 +182,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 5.34
