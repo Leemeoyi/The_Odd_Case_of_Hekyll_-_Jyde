@@ -7,7 +7,7 @@ public class PlayerAbility : MonoBehaviour
 {
 	public Sprite drJyde;
 	public Sprite heckyll;
-
+	
 	SpriteRenderer sr;
 	PlayerCore playerCore;
 
