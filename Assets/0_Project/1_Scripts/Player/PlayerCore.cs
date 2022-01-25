@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCore : MonoBehaviour
 {
     public int potionNum = 3;
-    bool isHeckyll = false;
+    bool isHeckyll = true;
 
     GameObject collidedObj;
     public bool IsHeckyll
