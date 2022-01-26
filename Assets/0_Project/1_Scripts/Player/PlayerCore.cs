@@ -10,8 +10,8 @@ public class PlayerCore : MonoBehaviour
 
     [SerializeField] float potionTimer;
     
-    float timer = 0f;
-    public float Timer => timer;
+    float potionTimer = 0f;
+    public float PotionTimer => timer;
 
     bool isHeckyll = true;
 
