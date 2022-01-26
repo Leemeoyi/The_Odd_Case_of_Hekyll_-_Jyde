@@ -2343,6 +2343,7 @@ MonoBehaviour:
   policesCount: 10
   townfolkPrefab: {fileID: 1339972712774910449, guid: 75d176f19ff14af44a1cd1dc285706fd, type: 3}
   policePrefab: {fileID: 548067481425912656, guid: a6969b5403d570f46abc337a5a1df200, type: 3}
+  currentFolkCount: 0
 --- !u!4 &702966984
 Transform:
   m_ObjectHideFlags: 0
@@ -2537,7 +2538,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 765855259}
-  - component: {fileID: 765855258}
   - component: {fileID: 765855257}
   m_Layer: 0
   m_Name: CoreManager
@@ -2564,6 +2564,8 @@ MonoBehaviour:
   skillSlider: {fileID: 1965565638}
   cooldownImg: {fileID: 1885747326}
   cooldownText: {fileID: 1555225269}
+  winText: It is a win text.
+  lossText: It is a loss text.
   gameOverEvents:
     m_PersistentCalls:
       m_Calls:
@@ -2591,24 +2593,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &765855258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765855256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b30c4428ca0e834982fd8c3b937ccd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  police: 1
-  folk: 30
-  skillCount: 3
-  skillTime: 100
-  winText: 
-  lossText: 
 --- !u!4 &765855259
 Transform:
   m_ObjectHideFlags: 0
@@ -61025,6 +61009,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555295, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: drinkPotionEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555295, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: drinkPotionEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555295, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: drinkPotionEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 765855257}
+    - target: {fileID: 6132169591417555295, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: drinkPotionEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555295, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: drinkPotionEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DrinkPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555295, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: drinkPotionEvents.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CoreManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555295, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: drinkPotionEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6132169591417555296, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -61068,6 +61080,34 @@ PrefabInstance:
     - target: {fileID: 6132169591417555296, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: killEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: killEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: killEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 765855257}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: killEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: killEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Kill
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: killEvents.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CoreManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: killEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}

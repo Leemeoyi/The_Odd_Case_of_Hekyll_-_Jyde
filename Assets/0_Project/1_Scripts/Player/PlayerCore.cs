@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCore : MonoBehaviour
 {
+    public static PlayerCore instance;
     public int potionNum = 3;
     bool justUsedPotion = false;
     public bool JustUsedPotion
@@ -13,8 +15,12 @@ public class PlayerCore : MonoBehaviour
     }
 
     [SerializeField] float potionTime;
+    public float PotionTimer
+    {
+        get => potionTime;
+    }
     [SerializeField] float transformationTime;
-    
+
     float timer = 0f;
     public float Timer
     {
@@ -28,7 +34,7 @@ public class PlayerCore : MonoBehaviour
         get => timer;
         set => timer = value;
     }
-    
+
     bool isHeckyll = true;
 
     GameObject collidedObj;
@@ -44,18 +50,31 @@ public class PlayerCore : MonoBehaviour
         set => collidedObj = value;
     }
 
+    [Header("Event")]
+    public UnityEvent killEvents;
+
+    // method
+    void Awake()
+    {
+        if (instance != null)
+            Destroy(this.gameObject);
+        else
+            instance = this;
+    }
+
     private void Update()
     {
         if (isHeckyll && Input.GetKeyDown(KeyCode.E))
         {
-            Destroy(CollidedObj);
+            TowniesManager.instance.KillTownfolk(collidedObj);
+            killEvents.Invoke();
         }
 
         if (justUsedPotion)
         {
             if (timer >= 0)
             {
-                timer -= Time.deltaTime;    
+                timer -= Time.deltaTime;
             }
             else
             {
@@ -78,5 +97,4 @@ public class PlayerCore : MonoBehaviour
         isHeckyll = true;
         justUsedPotion = false;
     }
-    
 }

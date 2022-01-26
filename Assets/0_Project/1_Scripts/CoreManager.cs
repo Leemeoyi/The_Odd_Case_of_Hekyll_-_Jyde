@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using NaughtyAttributes;
 
-[RequireComponent(typeof(CoreStateManager))]
 public class CoreManager : MonoBehaviour
 {
     public static CoreManager instance;
@@ -20,45 +19,27 @@ public class CoreManager : MonoBehaviour
     public Image cooldownImg;
     public Text cooldownText;
 
+    [Header("Game State")]
+    [Multiline]
+    public string winText;
+    [Multiline]
+    public string lossText;
+
     [Header("Events")]
     public UnityEvent gameOverEvents;
 
     public static float playTime;
 
     // private variable
-    CoreStateManager state;
-    int police
-    {
-        get { return state.police; }
-        set
-        {
-            state.police = value;
-            policeText.text = value.ToString();
-        }
-    }
-    int folk
-    {
-        get { return state.folk; }
-        set
-        {
-            state.folk = value;
-            folkText.text = value.ToString();
-        }
-    }
-    int skillCount
-    {
-        get { return state.skillCount; }
-        set
-        {
-            state.skillCount = value;
-            skillSlider.value = value;
-        }
-    }
-    float initialTimeScale;
-    float skillCountdown = 0f;
-    IEnumerator cooldownCoroutine;
+    int police => TowniesManager.instance.Polices.Count;
+    int folk => TowniesManager.instance.currentFolkCount;
+    int potionCount => PlayerCore.instance.potionNum;
+    float potionTotalCooldownTime => PlayerCore.instance.PotionTimer;
+    float potionRemainingCooldownTime => PlayerCore.instance.Timer;
 
-    bool isStop = false;
+    // local variable
+    float initialTimeScale;
+    IEnumerator cooldownCoroutine;
 
     // method
     void Awake()
@@ -68,7 +49,6 @@ public class CoreManager : MonoBehaviour
         else
             instance = this;
 
-        state = GetComponent<CoreStateManager>();
         playTime = 0f;
         initialTimeScale = Time.timeScale;
     }
@@ -77,8 +57,8 @@ public class CoreManager : MonoBehaviour
     {
         policeText.text = police.ToString();
         folkText.text = folk.ToString();
-        skillSlider.maxValue = skillCount;
-        skillSlider.value = skillCount;
+        skillSlider.maxValue = potionCount;
+        skillSlider.value = potionCount;
     }
 
     void Update()
@@ -100,40 +80,25 @@ public class CoreManager : MonoBehaviour
 
     //#region Skill
     [Button]
-    public void TriggerSkill()
+    public void DrinkPotion()
     {
-        if (isStop)
-        {
-            return;
-        }
-
-        if (skillCount > 0)
-        {
-            if (skillCountdown <= 0f)
-            {
-                skillCount -= 1;
-
-                cooldownCoroutine = CooldownSkill();
-                StartCoroutine(cooldownCoroutine);
-            }
-        }
+        skillSlider.value = potionCount;
+        cooldownCoroutine = PotionCooldown();
+        StartCoroutine(cooldownCoroutine);
     }
 
     // Might migrate to actual skill handling script
-    IEnumerator CooldownSkill()
+    IEnumerator PotionCooldown()
     {
         skillSlider.gameObject.SetActive(false);
         cooldownImg.gameObject.SetActive(true);
 
-        skillCountdown = state.skillTime;
-        while (skillCountdown > 0f)
+        while (potionRemainingCooldownTime > 0f)
         {
-            skillCountdown -= 1.0f;
+            cooldownImg.fillAmount = potionRemainingCooldownTime / potionTotalCooldownTime;
+            cooldownText.text = ((int)potionRemainingCooldownTime).ToString();
 
-            cooldownImg.fillAmount = skillCountdown / state.skillTime; ;
-            cooldownText.text = Mathf.Abs(skillCountdown).ToString();
-
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForEndOfFrame();
         }
 
         skillSlider.gameObject.SetActive(true);
@@ -144,14 +109,8 @@ public class CoreManager : MonoBehaviour
     [Button]
     public void Kill()
     {
-        if (isStop)
-        {
-            return;
-        }
-
-        folk -= 1;
-        police += 1;
-
+        folkText.text = folk.ToString();
+        policeText.text = police.ToString();
         if (folk <= 0)
         {
             GameOver();
@@ -161,12 +120,6 @@ public class CoreManager : MonoBehaviour
     [Button]
     public void GameOver()
     {
-        if (isStop)
-        {
-            return;
-        }
-
-        isStop = true;
         Pause();
         gameOverEvents.Invoke();
 
@@ -188,11 +141,11 @@ public class CoreManager : MonoBehaviour
 
     void Win()
     {
-        gameStateText.text = state.winText;
+        gameStateText.text = winText;
     }
 
     void Loss()
     {
-        gameStateText.text = state.lossText;
+        gameStateText.text = lossText;
     }
 }
