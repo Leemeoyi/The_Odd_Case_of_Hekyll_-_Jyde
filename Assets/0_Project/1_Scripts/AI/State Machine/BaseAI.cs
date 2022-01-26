@@ -40,5 +40,6 @@ public class BaseAI : MonoBehaviour
     protected virtual void Start()
     {
         nodeManager = NodeManager.instance;
+        agent.speed = Speed;
     }
 }

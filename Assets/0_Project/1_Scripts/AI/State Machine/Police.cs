@@ -66,8 +66,6 @@ public class Police : BaseAI
         Func<bool> PlayerOnSight() => () => (isOnSight == true);
         Func<bool> PlayerLoseSight() => () => (isOnSight == false);
         Func<bool> ForgetPlayer() => () => (isPursuing == false);
-
-        agent.speed = Speed;
     }
 
     private void Update()
