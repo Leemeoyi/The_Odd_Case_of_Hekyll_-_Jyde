@@ -56,7 +56,10 @@ public class TowniesManager : MonoBehaviour
 
                 if (i == 0 || prevRand != rand)
                 {
-                    GameObject temp = Instantiate(townfolkPrefab, nm.Nodes[rand].transform.position, Quaternion.identity);
+                    Vector2 spawnPos = nm.Nodes[rand].transform.position;
+                    spawnPos += Random.insideUnitCircle * nm.Nodes[rand].NodeRadius;
+                    
+                    GameObject temp = Instantiate(townfolkPrefab, spawnPos, Quaternion.identity);
                     temp.name = "Townfolk " + i;
                     prevRand = rand;
                     townfolks.Add(temp);
@@ -74,7 +77,10 @@ public class TowniesManager : MonoBehaviour
 
                 if (i == 0 || prevRand != rand)
                 {
-                    GameObject temp = Instantiate(policePrefab, nm.Nodes[rand].transform.position, Quaternion.identity);
+                    Vector2 spawnPos = nm.Nodes[rand].transform.position;
+                    spawnPos += Random.insideUnitCircle * nm.Nodes[rand].NodeRadius;
+                    
+                    GameObject temp = Instantiate(policePrefab, spawnPos, Quaternion.identity);
                     temp.name = "Police " + i;
                     prevRand = rand;
                     polices.Add(temp);

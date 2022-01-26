@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ad7265f-f27e-4153-8510-4c826b15c8bc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay/NavMesh-Navmesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay/NavMesh-Navmesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/CameraController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Police.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Police.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Chase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Chase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/TowniesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/TowniesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerCore.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/House/House.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/House/House.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/Police.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/Police.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/TownFolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/TownFolk.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f7273206767d421e83546c2b1e8d11691b800/01/c7559e5b/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,7 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1643089684084</updated>
       <workItem from="1643089697535" duration="13475000" />
-      <workItem from="1643189270997" duration="9782000" />
+      <workItem from="1643189270997" duration="10145000" />
+      <workItem from="1643204969328" duration="6176000" />
     </task>
     <servers />
   </component>

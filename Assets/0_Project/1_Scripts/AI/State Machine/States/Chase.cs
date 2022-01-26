@@ -9,7 +9,7 @@ public class Chase : IState
     NavMeshAgent agent;
     Animator anim;
     PlayerCore playercore;
-
+    Vector2 randInsideCircle;
     float originalSpeed;
     
     Vector2 targetPos;
@@ -28,6 +28,7 @@ public class Chase : IState
         agent.speed = policeAI.ChaseSpeed;
         policeAI.IsPursing = true;
         policeAI.LastPos = playercore.transform.position;
+        randInsideCircle = Random.insideUnitCircle * playercore.radiusSize;
     }
 
     public void OnExit()
@@ -39,7 +40,14 @@ public class Chase : IState
     {
         if (policeAI.IsOnSight)
         {
-            policeAI.LastPos = playercore.transform.position;
+            if (Vector2.Distance(policeAI.transform.position, playercore.transform.position) > playercore.radiusSize - 1.5f)
+            {
+                policeAI.LastPos = playercore.transform.position;
+            }
+            else
+            {
+                policeAI.LastPos = playercore.transform.position = randInsideCircle;
+            }
         }
         
         agent.SetDestination(policeAI.LastPos);

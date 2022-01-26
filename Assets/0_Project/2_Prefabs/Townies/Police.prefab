@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7227555812683638170}
   - component: {fileID: 5554547761808460584}
   - component: {fileID: 2588744295400325396}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Police
   m_TagString: Untagged
   m_Icon: {fileID: 0}

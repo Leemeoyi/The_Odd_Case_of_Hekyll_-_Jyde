@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 7681439765778493329}
   - component: {fileID: 255944643}
   - component: {fileID: 255944645}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.070183516, y: 1.6843951}
+  m_Offset: {x: -0.006066084, y: 1.6843951}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -205,7 +205,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.458587, y: 3.8291173}
+  m_Size: {x: 6.2385936, y: 3.8291173}
   m_EdgeRadius: 0
 --- !u!114 &255944645
 MonoBehaviour:

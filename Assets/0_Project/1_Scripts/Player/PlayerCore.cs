@@ -7,6 +7,8 @@ public class PlayerCore : MonoBehaviour
 {
     public static PlayerCore instance;
     public int potionNum = 3;
+    public float radiusSize = 1.5f;
+    
     bool justUsedPotion = false;
     public bool JustUsedPotion
     {
@@ -96,5 +98,13 @@ public class PlayerCore : MonoBehaviour
     {
         isHeckyll = true;
         justUsedPotion = false;
+    }
+    
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radiusSize);
+
+
     }
 }

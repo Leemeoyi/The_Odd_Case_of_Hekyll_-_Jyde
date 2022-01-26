@@ -30,6 +30,7 @@ public class Police : BaseAI
         set => isPursuing = value;
     }
 
+    LayerMask mask;
 
     protected override void Awake()
     {
@@ -48,7 +49,8 @@ public class Police : BaseAI
     protected override void Start()
     {
         base.Start();
-
+        
+        mask = LayerMask.GetMask("Default");
         var wandering = new Wandering(this, agent, anim);
         var chase = new Chase(this, agent, anim, pc);
         var searching = new Searching(this, agent, anim, pc);
@@ -82,21 +84,25 @@ public class Police : BaseAI
 
     void FixedUpdate()
     {
-
         if (isOverlapped)
         {
-            LayerMask layerMask = LayerMask.GetMask("Default");
-            Debug.DrawLine(this.transform.position, pc.transform.position, Color.red);
-            RaycastHit2D hit = Physics2D.Linecast(transform.position, pc.transform.position, layerMask);
+           
+            RaycastHit2D hit = Physics2D.Linecast(transform.position, pc.transform.position, mask);
 
-            if (hit.collider.gameObject.CompareTag("Player"))
+            if (hit.collider != null)
             {
-                isOnSight = true;
+                print(hit.collider.gameObject.name);
+                if (hit.collider.gameObject.CompareTag("Player"))
+                {
+                    Debug.DrawLine(this.transform.position, pc.transform.position, Color.red);
+                    isOnSight = true;
+                }
+                else
+                {
+                    isOnSight = false;
+                }
             }
-            else
-            {
-                isOnSight = false;
-            }
+
         }
     }
 
