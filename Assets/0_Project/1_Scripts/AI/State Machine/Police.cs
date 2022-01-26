@@ -12,8 +12,10 @@ public class Police : BaseAI
     [SerializeField] float outerDetectionRadius = 3.0f;
     [SerializeField] float innerDetectionRadius = 1.5f;
     [SerializeField] float collisionRadius = 1f;
+    [SerializeField] float searchingTime;
 
     public float ChaseSpeed => chaseSpeed;
+    public float SearchingTime => searchingTime;
 
     bool isOverlapped = false;
     public bool IsOverlapped => isOverlapped;
@@ -34,7 +36,6 @@ public class Police : BaseAI
         base.Awake();
 
         pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCore>();
-
     }
 
     Vector2 lastPos;

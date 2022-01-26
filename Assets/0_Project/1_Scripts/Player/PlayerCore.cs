@@ -62,9 +62,6 @@ public class PlayerCore : MonoBehaviour
                 justUsedPotion = false;
             }
         }
-
-
-        
     }
 
     public void TransformingToJyde()

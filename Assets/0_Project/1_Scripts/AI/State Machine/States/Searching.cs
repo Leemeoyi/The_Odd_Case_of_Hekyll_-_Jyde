@@ -12,6 +12,9 @@ public class Searching : IState
 
     float originalSpeed;
 
+    float timer;
+    
+
     public Searching(Police policeAI, NavMeshAgent agent, Animator anim, PlayerCore playercore)
     {
         this.policeAI = policeAI;
@@ -25,7 +28,7 @@ public class Searching : IState
     {
         agent.speed = policeAI.ChaseSpeed;
         policeAI.LastPos = playercore.transform.position;
-        Debug.Log("searching");
+        timer = policeAI.SearchingTime;
     }
 
     public void OnExit()
@@ -36,11 +39,11 @@ public class Searching : IState
 
     public void Tick()
     {
-        if (policeAI.IsOnSight)
+        timer -= Time.deltaTime;
+
+        if (timer <= 0.0f)
         {
-            policeAI.LastPos = playercore.transform.position;
+            policeAI.IsPursing = false;
         }
-        
-        agent.SetDestination(policeAI.LastPos);
     }
 }

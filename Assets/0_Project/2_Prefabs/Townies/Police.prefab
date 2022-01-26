@@ -146,6 +146,8 @@ MonoBehaviour:
   chaseSpeed: 4
   outerDetectionRadius: 5.34
   innerDetectionRadius: 2.54
+  collisionRadius: 1
+  searchingTime: 5
 --- !u!50 &5554547761808460584
 Rigidbody2D:
   serializedVersion: 4
