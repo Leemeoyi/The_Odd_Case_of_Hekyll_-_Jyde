@@ -11,6 +11,7 @@ public class Police : BaseAI
     [SerializeField] float chaseSpeed;
     [SerializeField] float outerDetectionRadius = 3.0f;
     [SerializeField] float innerDetectionRadius = 1.5f;
+    [SerializeField] float collisionRadius = 1f;
 
     public float ChaseSpeed => chaseSpeed;
 
@@ -20,6 +21,14 @@ public class Police : BaseAI
     bool isOnSight = false;
     public bool IsOnSight => isOnSight;
 
+    bool isPursuing = false;
+    public bool IsPursing
+    {
+        get => isPursuing;
+        set => isPursuing = value;
+    }
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -28,28 +37,41 @@ public class Police : BaseAI
 
     }
 
+    Vector2 lastPos;
+    public Vector2 LastPos
+    {
+        get => lastPos;
+        set => lastPos = value;
+    }
+    
     protected override void Start()
     {
         base.Start();
 
         var wandering = new Wandering(this, agent, anim);
         var chase = new Chase(this, agent, anim, pc);
+        var searching = new Searching(this, agent, anim, pc);
         
-        At(chase, wandering, PlayerOnSight());
-        At(wandering, chase, PlayerLoseSight());
+        
+        stateMachine.AddAnyTransition(chase, PlayerOnSight());
+        //At(wandering, chase, PlayerLoseSight());
+        
+        At(searching, chase, PlayerLoseSight());
+        At(wandering, searching, ForgetPlayer());
         
         stateMachine.SetState(wandering);
         
-        void At(IState from, IState to, Func<bool> condition) => stateMachine.AddTransition(from, to, condition);
-        Func<bool> PlayerOnSight() => () => (isOverlapped == true);
-        Func<bool> PlayerLoseSight() => () => (isOverlapped == false);
+        void At(IState to, IState from, Func<bool> condition) => stateMachine.AddTransition(to, from, condition);
+        Func<bool> PlayerOnSight() => () => (isOnSight == true);
+        Func<bool> PlayerLoseSight() => () => (isOnSight == false);
+        Func<bool> ForgetPlayer() => () => (isPursuing == false);
 
         agent.speed = Speed;
     }
 
     private void Update()
     {
-        if (Vector2.Distance(pc.transform.position, transform.position) < innerDetectionRadius)
+        if (Vector2.Distance(pc.transform.position, transform.position) < collisionRadius)
         {
             pc.gameObject.SetActive(false);
             print("Caught the player");
@@ -70,13 +92,10 @@ public class Police : BaseAI
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 isOnSight = true;
-                print("HIT!");
             }
             else
             {
                 isOnSight = false;
-                print(hit.collider.gameObject.name);
-
             }
         }
     }
@@ -104,7 +123,10 @@ public class Police : BaseAI
         
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, innerDetectionRadius);
-        
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, collisionRadius);
+
     }
 
     void OnValidate()

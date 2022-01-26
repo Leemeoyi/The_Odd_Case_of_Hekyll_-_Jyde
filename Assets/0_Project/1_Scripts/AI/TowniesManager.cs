@@ -9,18 +9,26 @@ public class TowniesManager : MonoBehaviour
     public static TowniesManager instance;
     
     CoreManager cm;
-    [SerializeField] int townfolkCount = 30;
-    [SerializeField] int policeCount = 10;
 
+    [SerializeField] int townfolksCount;
+    public int TownfolksCount => townfolksCount;
+    
+    [SerializeField] int policesCount;
+    public int PolicesCount => policesCount;
+    
+    
     [SerializeField] GameObject townfolkPrefab;
     [SerializeField] GameObject policePrefab;
     
     List<GameObject> townfolks = new List<GameObject>();
+
+    public List<GameObject> Townfolks { get => townfolks; }
+    
     List<GameObject> polices = new List<GameObject>();
-
+    public List<GameObject> Polices { get => townfolks; }
+    
     NodeManager nm;
-
-
+    
     private void Awake()
     {
         if (instance != null)
@@ -36,7 +44,7 @@ public class TowniesManager : MonoBehaviour
         int rand = 0;
         int prevRand = 0;
         
-        for (int i = 0; i < townfolkCount; i++)
+        for (int i = 0; i < townfolksCount; i++)
         {
             bool pass = false;
             do
@@ -53,7 +61,7 @@ public class TowniesManager : MonoBehaviour
             } while (pass != true);
         }
         
-        for (int i = 0; i < policeCount; i++)
+        for (int i = 0; i < policesCount; i++)
         {
             bool pass = false;
             do

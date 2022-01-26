@@ -5,6 +5,14 @@ using UnityEngine;
 public class PlayerCore : MonoBehaviour
 {
     public int potionNum = 3;
+
+    bool justUsedPotion = false;
+
+    [SerializeField] float potionTimer;
+    
+    float timer = 0f;
+    public float Timer => timer;
+
     bool isHeckyll = true;
 
     GameObject collidedObj;
@@ -31,6 +39,12 @@ public class PlayerCore : MonoBehaviour
         {
             print("yeah");
         }
+
+        if (justUsedPotion)
+        {
+            timer -= Time.deltaTime;
+        }
+        
     }
     
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Chase : IState
+public class Searching : IState
 {
     readonly Police policeAI;
     NavMeshAgent agent;
@@ -11,10 +11,8 @@ public class Chase : IState
     PlayerCore playercore;
 
     float originalSpeed;
-    
-    Vector2 targetPos;
 
-    public Chase(Police policeAI, NavMeshAgent agent, Animator anim, PlayerCore playercore)
+    public Searching(Police policeAI, NavMeshAgent agent, Animator anim, PlayerCore playercore)
     {
         this.policeAI = policeAI;
         this.agent = agent;
@@ -26,13 +24,14 @@ public class Chase : IState
     public void OnEnter()
     {
         agent.speed = policeAI.ChaseSpeed;
-        policeAI.IsPursing = true;
         policeAI.LastPos = playercore.transform.position;
+        Debug.Log("searching");
     }
 
     public void OnExit()
     {
         agent.speed = originalSpeed;
+        policeAI.LastPos = Vector2.zero;
     }
 
     public void Tick()
