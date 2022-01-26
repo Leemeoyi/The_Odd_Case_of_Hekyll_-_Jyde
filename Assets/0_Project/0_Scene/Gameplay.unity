@@ -55108,6 +55108,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -11.75
       objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: potionTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: transformationTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
+      propertyPath: transformationTimer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6792554303546887423, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
       propertyPath: m_BodyType
       value: 0

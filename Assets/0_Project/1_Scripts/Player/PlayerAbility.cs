@@ -21,12 +21,23 @@ public class PlayerAbility : MonoBehaviour
 	{		
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
-			if (playerCore.IsHeckyll && playerCore.potionNum > 0)
+			if (playerCore.IsHeckyll && playerCore.potionNum > 0 && !playerCore.JustUsedPotion)
 			{
 				sr.sprite = drJyde;
-				playerCore.IsHeckyll = false;
-				playerCore.potionNum--;
+				playerCore.TransformingToJyde();
 			}
 		}
+
+		if (!playerCore.IsHeckyll)
+		{
+			playerCore.TransformationTimer -= Time.deltaTime;
+
+			if (playerCore.TransformationTimer < 0)
+			{
+				sr.sprite = heckyll;
+				playerCore.TransformingToHeckyll();
+			}
+		}
+		
 	}
 }
