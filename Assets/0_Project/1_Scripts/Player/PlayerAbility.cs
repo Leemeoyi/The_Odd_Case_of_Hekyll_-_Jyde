@@ -16,7 +16,7 @@ public class PlayerAbility : MonoBehaviour
 		sr = GetComponent<SpriteRenderer>();
 		playerCore = GetComponent<PlayerCore>();
 	}
-
+	
 	void Update()
 	{		
 		if (Input.GetKeyDown(KeyCode.Q))
@@ -26,15 +26,6 @@ public class PlayerAbility : MonoBehaviour
 				sr.sprite = drJyde;
 				playerCore.IsHeckyll = false;
 				playerCore.potionNum--;
-			}
-			else if (!playerCore.IsHeckyll)
-			{
-				sr.sprite = heckyll;
-				playerCore.IsHeckyll = true;
-			}
-			else
-			{
-				Debug.Log("Potion finished, " + playerCore.potionNum);
 			}
 		}
 	}

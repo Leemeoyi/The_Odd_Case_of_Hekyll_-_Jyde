@@ -35,11 +35,6 @@ public class PlayerCore : MonoBehaviour
             Destroy(CollidedObj);
         }
 
-        if (collidedObj != null)
-        {
-            print("yeah");
-        }
-
         if (justUsedPotion)
         {
             timer -= Time.deltaTime;
