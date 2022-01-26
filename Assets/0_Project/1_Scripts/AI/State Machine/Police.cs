@@ -19,7 +19,7 @@ public class Police : BaseAI
 
     bool isOverlapped = false;
     public bool IsOverlapped => isOverlapped;
-    
+
     bool isOnSight = false;
     public bool IsOnSight => isOnSight;
 
@@ -44,7 +44,7 @@ public class Police : BaseAI
         get => lastPos;
         set => lastPos = value;
     }
-    
+
     protected override void Start()
     {
         base.Start();
@@ -52,16 +52,16 @@ public class Police : BaseAI
         var wandering = new Wandering(this, agent, anim);
         var chase = new Chase(this, agent, anim, pc);
         var searching = new Searching(this, agent, anim, pc);
-        
-        
+
+
         stateMachine.AddAnyTransition(chase, PlayerOnSight());
         //At(wandering, chase, PlayerLoseSight());
-        
+
         At(searching, chase, PlayerLoseSight());
         At(wandering, searching, ForgetPlayer());
-        
+
         stateMachine.SetState(wandering);
-        
+
         void At(IState to, IState from, Func<bool> condition) => stateMachine.AddTransition(to, from, condition);
         Func<bool> PlayerOnSight() => () => (isOnSight == true);
         Func<bool> PlayerLoseSight() => () => (isOnSight == false);
@@ -73,15 +73,16 @@ public class Police : BaseAI
         if (Vector2.Distance(pc.transform.position, transform.position) < collisionRadius)
         {
             pc.gameObject.SetActive(false);
+            CoreManager.instance.GameOver();
             print("Caught the player");
         }
-        
+
         stateMachine.Tick();
     }
 
     void FixedUpdate()
     {
-        
+
         if (isOverlapped)
         {
             LayerMask layerMask = LayerMask.GetMask("Default");
@@ -119,7 +120,7 @@ public class Police : BaseAI
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, outerDetectionRadius);
-        
+
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, innerDetectionRadius);
 
