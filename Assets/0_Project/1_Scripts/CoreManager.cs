@@ -15,9 +15,8 @@ public class CoreManager : MonoBehaviour
     public Text gameStateText;
 
     // Skill
-    public Slider skillSlider;
+    public Text skillNumText;
     public Image cooldownImg;
-    public Text cooldownText;
 
     [Header("Game State")]
     [Multiline]
@@ -57,8 +56,7 @@ public class CoreManager : MonoBehaviour
     {
         policeText.text = police.ToString();
         folkText.text = folk.ToString();
-        skillSlider.maxValue = potionCount;
-        skillSlider.value = potionCount;
+        skillNumText.text = potionCount.ToString();
     }
 
     void Update()
@@ -82,7 +80,7 @@ public class CoreManager : MonoBehaviour
     [Button]
     public void DrinkPotion()
     {
-        skillSlider.value = potionCount;
+        skillNumText.text = potionCount.ToString();
         cooldownCoroutine = PotionCooldown();
         StartCoroutine(cooldownCoroutine);
     }
@@ -90,18 +88,15 @@ public class CoreManager : MonoBehaviour
     // Might migrate to actual skill handling script
     IEnumerator PotionCooldown()
     {
-        skillSlider.gameObject.SetActive(false);
         cooldownImg.gameObject.SetActive(true);
 
         while (potionRemainingCooldownTime > 0f)
         {
             cooldownImg.fillAmount = potionRemainingCooldownTime / potionTotalCooldownTime;
-            cooldownText.text = ((int)potionRemainingCooldownTime).ToString();
 
             yield return new WaitForEndOfFrame();
         }
 
-        skillSlider.gameObject.SetActive(true);
         cooldownImg.gameObject.SetActive(false);
     }
     //#endregion
