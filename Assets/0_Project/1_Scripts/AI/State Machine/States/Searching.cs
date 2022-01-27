@@ -26,6 +26,7 @@ public class Searching : IState
     
     public void OnEnter()
     {
+        
         agent.speed = policeAI.ChaseSpeed;
         policeAI.LastPos = playercore.transform.position;
         timer = policeAI.SearchingTime;
@@ -41,6 +42,9 @@ public class Searching : IState
     {
         timer -= Time.deltaTime;
 
+        if (!agent.hasPath)
+            anim.SetBool("IsWalking", false);
+        
         if (timer <= 0.0f)
         {
             policeAI.IsPursing = false;

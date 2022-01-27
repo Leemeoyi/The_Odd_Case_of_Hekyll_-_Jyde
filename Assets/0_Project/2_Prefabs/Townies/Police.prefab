@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7227555812683638170}
   - component: {fileID: 5554547761808460584}
   - component: {fileID: 2588744295400325396}
+  - component: {fileID: 6124980670627375868}
   m_Layer: 2
   m_Name: Police
   m_TagString: Untagged
@@ -47,7 +48,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 200
+  m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 360
   m_StoppingDistance: 0
@@ -68,7 +69,7 @@ Animator:
   m_GameObject: {fileID: 548067481425912656}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78454a8eea0ea4649aecd70ec282b8dd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -117,7 +118,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fd20885d5b453af44851fa60ae3c2730, type: 3}
+  m_Sprite: {fileID: 5511566274042601910, guid: 7e060feb014a1584d9a9dd633dbd35c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,10 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5b0acd80b5bad4bbc1c489e2295b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 2.5
   maxStandingDuration: 3
   minStandingDuration: 1
-  chaseSpeed: 4
+  chaseSpeed: 3.5
   outerDetectionRadius: 5.34
   innerDetectionRadius: 2.54
   collisionRadius: 1
@@ -185,3 +186,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.34
+--- !u!58 &6124980670627375868
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548067481425912656}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.01, y: -0.61}
+  serializedVersion: 2
+  m_Radius: 0.21

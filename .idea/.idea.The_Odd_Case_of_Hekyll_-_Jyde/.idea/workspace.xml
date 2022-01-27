@@ -1,7 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ad7265f-f27e-4153-8510-4c826b15c8bc" name="Changes" comment="" />
+    <list default="true" id="6ad7265f-f27e-4153-8510-4c826b15c8bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/Attack.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/Attack.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/HeckIdle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/HeckIdle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/HeckRun.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/HeckRun.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PlayerIdle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PlayerIdle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PlayerTransformToHeckell.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PlayerTransformToHeckell.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PlayerTransformToJyde.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PlayerTransformToJyde.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PlayerWalking.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PlayerWalking.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PrepAttack.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/PrepAttack.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/char_drjyde_spritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/char_drjyde_spritesheet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/char_mrheck_spritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/char_mrheck_spritesheet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/PoliceAnimator.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/PoliceAnimator.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Walking.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Walking.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/bobby_spritesheet_0.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/bobby_spritesheet_0.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/bobby_spritesheet_2.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/bobby_spritesheet_2.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/bobby_spritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/bobby_spritesheet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Townies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Townies/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Townies/Animation/TowniesAnim.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Townies/Animation/TowniesAnim.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Folliage/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Folliage/Materials/Tree.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Folliage/Materials/Tree.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/BaseAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/BaseAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Police.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Police.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Chase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Chase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Searching.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Searching.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Wandering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Wandering.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Townfolk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Townfolk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/House/HouseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/House/HouseHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/House/House.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/House/House.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/Police.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/Police.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/TownFolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/TownFolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Animation/PlayerAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Animation/PlayerAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Animation/drjyde_spritesheet_0.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Animation/drjyde_spritesheet_0.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Animation/drjyde_spritesheet_2.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Animation/drjyde_spritesheet_2.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +126,7 @@
       <workItem from="1643089697535" duration="13475000" />
       <workItem from="1643189270997" duration="10145000" />
       <workItem from="1643204969328" duration="6810000" />
-      <workItem from="1643284617537" duration="1758000" />
+      <workItem from="1643284617537" duration="8963000" />
     </task>
     <servers />
   </component>
