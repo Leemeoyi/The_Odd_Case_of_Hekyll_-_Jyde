@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class ManageScene: MonoBehaviour
 {
-    public void PlayGame() 
+    public void SwitchScene(int buildIndex)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(buildIndex);
     }
-
+    
     public void QuitGame()
     {
         Application.Quit();

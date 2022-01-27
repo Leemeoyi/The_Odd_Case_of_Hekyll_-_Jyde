@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1560541015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1447593113691671223, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+  m_PrefabInstance: {fileID: 1447593112602086713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1560541017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560541015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58d5b3bbbcde0849b650c53de5da353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1881006529
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +316,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1447593113043255148, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: b7346a479e4b9b84c8f3cbd0bcc22bad, type: 3}
+    - target: {fileID: 1447593113186851074, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: b7346a479e4b9b84c8f3cbd0bcc22bad, type: 3}
     - target: {fileID: 1447593113290272658, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -386,6 +411,34 @@ PrefabInstance:
     - target: {fileID: 1447593113290272670, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447593113585325708, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: b7346a479e4b9b84c8f3cbd0bcc22bad, type: 3}
+    - target: {fileID: 1447593113691671209, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447593113691671209, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1560541017}
+    - target: {fileID: 1447593113691671209, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447593113691671209, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneManage, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447593113691671209, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447593113691671223, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
+      propertyPath: m_Name
+      value: Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 1447593113825143704, guid: d898d505cca73ec4c9db364cf7b8e7dd, type: 3}
       propertyPath: m_IsActive
