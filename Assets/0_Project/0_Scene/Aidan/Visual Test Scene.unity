@@ -703,13 +703,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359289741}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5120cec427ddaba41bd7f27e61d6279b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: d67a6e192bc301443b3877b8b89936bf, type: 3}
-  Brightness: 1.1
+  Brightness: 1
   HighlightColor: {r: 1, g: 1, b: 1, a: 0}
   HighlightThreshold: 0.21
   MidColor: {r: 1, g: 0.74597627, b: 0.47450984, a: 0.7647059}
