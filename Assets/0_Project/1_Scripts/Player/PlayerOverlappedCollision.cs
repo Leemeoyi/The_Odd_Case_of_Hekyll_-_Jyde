@@ -11,6 +11,11 @@ public class PlayerOverlappedCollision : MonoBehaviour
     {
         pc = GetComponentInParent<PlayerCore>();
     }
+    
+    void Update()
+    {
+        transform.position = pc.transform.position;
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
