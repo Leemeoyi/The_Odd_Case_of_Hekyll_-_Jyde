@@ -28,6 +28,8 @@ public class Wandering : IState
     {
         if (currentNode != null) return;
         
+        anim.speed = 1;
+        
         Transform tMin = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = baseAI.transform.position;
@@ -56,7 +58,9 @@ public class Wandering : IState
         if (Reached == true)
         {
             timer += Time.deltaTime;
-            
+            anim.SetBool("IsWalking", false);
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;;
             if (timer > timerTarget)
             {
                 int rand = Random.Range(0, currentNode.ConnectedNode.Count);
@@ -70,7 +74,9 @@ public class Wandering : IState
         }
         else
         {
+            anim.SetBool("IsWalking", true);
             agent.SetDestination(destination);
+            agent.isStopped = false;
             if (Vector2.Distance(baseAI.transform.position, destination) < 0.3f)
             {
                 Reached = true;

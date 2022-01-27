@@ -66,7 +66,7 @@ public class PlayerCore : MonoBehaviour
 
     private void Update()
     {
-        if (isHeckyll && Input.GetKeyDown(KeyCode.E))
+        if (isHeckyll && Input.GetKeyDown(KeyCode.E) && collidedObj != null)
         {
             TowniesManager.instance.KillTownfolk(collidedObj);
             killEvents.Invoke();

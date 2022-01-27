@@ -65,13 +65,18 @@ public class Police : BaseAI
         stateMachine.SetState(wandering);
 
         void At(IState to, IState from, Func<bool> condition) => stateMachine.AddTransition(to, from, condition);
-        Func<bool> PlayerOnSight() => () => (isOnSight == true);
-        Func<bool> PlayerLoseSight() => () => (isOnSight == false);
-        Func<bool> ForgetPlayer() => () => (isPursuing == false);
+        Func<bool> PlayerOnSight() => () => (isOnSight && pc.IsHeckyll);
+        Func<bool> PlayerLoseSight() => () => (!isOnSight);
+        Func<bool> ForgetPlayer() => () => (!isPursuing );
     }
 
     private void Update()
     {
+        if (prevPos < transform.position.x)
+            sr.flipX = false;
+        else if (prevPos > transform.position.x)
+            sr.flipX = true;
+        
         if (Vector2.Distance(pc.transform.position, transform.position) < collisionRadius)
         {
             pc.gameObject.SetActive(false);
@@ -80,19 +85,19 @@ public class Police : BaseAI
         }
 
         stateMachine.Tick();
+
+        prevPos = transform.position.x;
     }
 
     void FixedUpdate()
     {
         if (isOverlapped)
         {
-           
             RaycastHit2D hit = Physics2D.Linecast(transform.position, pc.transform.position, mask);
 
             if (hit.collider != null)
             {
-                print(hit.collider.gameObject.name);
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("Player") && pc.IsHeckyll)
                 {
                     Debug.DrawLine(this.transform.position, pc.transform.position, Color.red);
                     isOnSight = true;
@@ -102,7 +107,6 @@ public class Police : BaseAI
                     isOnSight = false;
                 }
             }
-
         }
     }
 
@@ -132,7 +136,6 @@ public class Police : BaseAI
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, collisionRadius);
-
     }
 
     void OnValidate()
