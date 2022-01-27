@@ -65,6 +65,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (currentAnim[0].clip.name == "PlayerTransformToJyde" ||
+            currentAnim[0].clip.name == "PlayerTransformToHeckell")
+            return;
         rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
         
     }
