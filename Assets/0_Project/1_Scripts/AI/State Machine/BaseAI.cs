@@ -14,7 +14,9 @@ public class BaseAI : MonoBehaviour
 {
     protected NavMeshAgent agent;
     protected Animator anim;
+    protected SpriteRenderer sr;
     NodeManager nodeManager;
+    protected float prevPos;
     public NodeManager NodeManager { get => nodeManager; }
 
     protected StateMachine stateMachine;
@@ -28,10 +30,13 @@ public class BaseAI : MonoBehaviour
     [SerializeField] float minStandingDuration = 1.0f;
     public float MinStandingDuration { get => minStandingDuration; }
 
+
+    
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 

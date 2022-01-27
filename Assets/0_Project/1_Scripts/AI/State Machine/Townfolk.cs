@@ -21,6 +21,13 @@ public class Townfolk : BaseAI
     private void Update()
     {
         stateMachine.Tick();
+        
+        if (prevPos < transform.position.x)
+            sr.flipX = false;
+        else if (prevPos > transform.position.x)
+            sr.flipX = true;
+
+        prevPos = transform.position.x;
     }
 
 }
