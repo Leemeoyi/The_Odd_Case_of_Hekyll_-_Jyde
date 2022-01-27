@@ -17,7 +17,7 @@ public class PlayerOverlappedCollision : MonoBehaviour
         transform.position = pc.transform.position;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("folk"))
         {
