@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     //add rigidbody2d component to the player
 
     public float speed;
+    public Animator animator;
 
     Rigidbody2D rb;
     PlayerCore playerCore;
@@ -24,7 +25,12 @@ public class PlayerController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        
+
+        /*should be animation
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+        */
         transform.Translate((movement * Time.deltaTime) * speed, Space.Self);
     }
 
