@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ad7265f-f27e-4153-8510-4c826b15c8bc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay/NavMesh-Navmesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay/NavMesh-Navmesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerOverlappedCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerOverlappedCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/House/House.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/House/House.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/Police.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/Police.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,7 @@
       <workItem from="1643089697535" duration="13475000" />
       <workItem from="1643189270997" duration="10145000" />
       <workItem from="1643204969328" duration="6810000" />
-      <workItem from="1643284617537" duration="11738000" />
+      <workItem from="1643284617537" duration="12379000" />
     </task>
     <servers />
   </component>

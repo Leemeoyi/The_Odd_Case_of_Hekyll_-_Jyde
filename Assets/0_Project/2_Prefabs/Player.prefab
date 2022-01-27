@@ -98,8 +98,8 @@ GameObject:
   - component: {fileID: 6132169591417555295}
   - component: {fileID: 6132169591417555292}
   - component: {fileID: 6132169591417555298}
-  - component: {fileID: 469272166}
   - component: {fileID: 469272159}
+  - component: {fileID: 158482157398020362}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -186,7 +186,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012691498, y: -0.48645997}
+  m_Offset: {x: 0.02, y: -0.67}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -197,7 +197,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6952143, y: 0.23417091}
+  m_Size: {x: 0.25, y: 0.23417091}
   m_EdgeRadius: 0
 --- !u!50 &6132169591417555294
 Rigidbody2D:
@@ -277,8 +277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   potionNum: 3
   radiusSize: 2.42
-  potionTime: 5
-  transformationTime: 3
+  potionTime: 20
+  transformationTime: 10
   killEvents:
     m_PersistentCalls:
       m_Calls:
@@ -294,22 +294,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!58 &469272166
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6132169591417555293}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5833333
 --- !u!95 &469272159
 Animator:
   serializedVersion: 3
@@ -329,3 +313,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &158482157398020362
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6132169591417555293}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.29}
+  m_Size: {x: 0.49, y: 1.07}
+  m_Direction: 0

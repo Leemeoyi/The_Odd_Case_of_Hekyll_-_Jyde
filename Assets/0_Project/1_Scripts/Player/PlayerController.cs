@@ -60,12 +60,12 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsWalking", false);
         }
 
-        transform.Translate((movement.normalized * Time.deltaTime) * speed, Space.Self);
+        //transform.Translate((movement.normalized * Time.deltaTime) * speed, Space.Self);
     }
 
     void FixedUpdate()
     {
-        //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
         
     }
 }

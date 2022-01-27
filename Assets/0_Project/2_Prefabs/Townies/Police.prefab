@@ -144,7 +144,7 @@ MonoBehaviour:
   speed: 2.5
   maxStandingDuration: 3
   minStandingDuration: 1
-  chaseSpeed: 3.5
+  chaseSpeed: 4.7
   outerDetectionRadius: 5.34
   innerDetectionRadius: 2.54
   collisionRadius: 1
