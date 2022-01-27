@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ad7265f-f27e-4153-8510-4c826b15c8bc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6ad7265f-f27e-4153-8510-4c826b15c8bc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +64,7 @@
       <workItem from="1643089697535" duration="13475000" />
       <workItem from="1643189270997" duration="10145000" />
       <workItem from="1643204969328" duration="6810000" />
+      <workItem from="1643284617537" duration="1758000" />
     </task>
     <servers />
   </component>
