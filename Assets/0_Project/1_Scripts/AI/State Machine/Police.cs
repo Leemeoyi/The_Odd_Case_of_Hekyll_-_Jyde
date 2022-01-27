@@ -77,7 +77,7 @@ public class Police : BaseAI
         else if (prevPos > transform.position.x)
             sr.flipX = true;
         
-        if (Vector2.Distance(pc.transform.position, transform.position) < collisionRadius)
+        if (Vector2.Distance(pc.transform.position, transform.position) < collisionRadius && pc.IsHeckyll)
         {
             pc.gameObject.SetActive(false);
             CoreManager.instance.GameOver();

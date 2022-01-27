@@ -33,8 +33,8 @@ public class PlayerCore : MonoBehaviour
     float transformationTimer = 0f;
     public float TransformationTimer
     {
-        get => timer;
-        set => timer = value;
+        get => transformationTimer;
+        set => transformationTimer = value;
     }
 
     bool isHeckyll = true;

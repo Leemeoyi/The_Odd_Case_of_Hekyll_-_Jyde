@@ -29,6 +29,7 @@ public class Chase : IState
     public void OnEnter()
     {
         agent.speed = policeAI.ChaseSpeed;
+        agent.ResetPath();
         policeAI.IsPursing = true;
         policeAI.LastPos = playercore.transform.position;
         randInsideCircle = Random.insideUnitCircle * playercore.radiusSize;

@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 6132169591417555295}
   - component: {fileID: 6132169591417555292}
   - component: {fileID: 6132169591417555298}
+  - component: {fileID: 469272166}
+  - component: {fileID: 469272159}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -160,12 +162,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c9d93f077b6a2c4d8cbfe5dbafd395a, type: 3}
+  m_Sprite: {fileID: 5125646701946364069, guid: 5df4abd2cdb0faf4d86bdc66d17f936e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2.4}
+  m_Size: {x: 1.3333334, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -184,18 +186,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.045036316, y: -0.75951004}
+  m_Offset: {x: -0.012691498, y: -0.48645997}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.4}
-    newSize: {x: 2, y: 2.4}
+    oldSize: {x: 1.3333334, y: 2}
+    newSize: {x: 1.3333334, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.92082, y: 0.8426275}
+  m_Size: {x: 0.6952143, y: 0.23417091}
   m_EdgeRadius: 0
 --- !u!50 &6132169591417555294
 Rigidbody2D:
@@ -232,6 +234,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drJyde: {fileID: 21300000, guid: dd4893f61ed7dc24e803b465d9599d9a, type: 3}
   heckyll: {fileID: 21300000, guid: 8c9d93f077b6a2c4d8cbfe5dbafd395a, type: 3}
+  drinkPotionEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CoreManager, Assembly-CSharp
+        m_MethodName: DrinkPotion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6132169591417555292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  animator: {fileID: 469272159}
 --- !u!114 &6132169591417555298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,5 +276,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potionNum: 3
+  radiusSize: 2.42
   potionTime: 5
   transformationTime: 3
+  killEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CoreManager, Assembly-CSharp
+        m_MethodName: Kill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!58 &469272166
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6132169591417555293}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5833333
+--- !u!95 &469272159
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6132169591417555293}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddf777d82a2305e48a2ee373426dbffc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

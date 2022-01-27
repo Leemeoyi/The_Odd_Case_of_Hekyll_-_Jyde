@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     PlayerCore playerCore;
     Vector2 movement;
+    AnimatorClipInfo[] currentAnim;
 
     void Awake()
     {
@@ -23,6 +24,11 @@ public class PlayerController : MonoBehaviour
     //! Chris: Changed the movement method to use translate instead to avoidd jittering from the rigidbody body
     void Update()
     {
+        currentAnim = animator.GetCurrentAnimatorClipInfo(0);
+        if (currentAnim[0].clip.name == "PlayerTransformToJyde" ||
+            currentAnim[0].clip.name == "PlayerTransformToHeckell")
+            return;
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 

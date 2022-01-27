@@ -28,7 +28,6 @@ public class PlayerAbility : MonoBehaviour
         {
             if (playerCore.IsHeckyll && playerCore.potionNum > 0 && !playerCore.JustUsedPotion)
             {
-                sr.sprite = drJyde;
                 playerCore.TransformingToJyde();
                 drinkPotionEvents.Invoke();
             }
@@ -40,7 +39,6 @@ public class PlayerAbility : MonoBehaviour
 
             if (playerCore.TransformationTimer < 0)
             {
-                sr.sprite = heckyll;
                 playerCore.TransformingToHeckyll();
             }
         }
