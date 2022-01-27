@@ -26,6 +26,16 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+
+        if (playerCore.IsHeckyll)
+        {
+            animator.SetBool("IsJyde", false);
+        }
+        else
+        {
+            animator.SetBool("IsJyde", true);
+        }
+
         if (movement.x > 0)
         {
             sr.flipX = false;
@@ -50,5 +60,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        
     }
 }
