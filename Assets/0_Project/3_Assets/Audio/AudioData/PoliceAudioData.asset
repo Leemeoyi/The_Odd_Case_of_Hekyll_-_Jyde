@@ -12,5 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0fa196bde4bf9e46a59931f1b550835, type: 3}
   m_Name: PoliceAudioData
   m_EditorClassIdentifier: 
-  audioList: []
-  soundPacks: []
+  audioList:
+  - clip: {fileID: 8300000, guid: cb765a1ada7dc7c42b55185c9f311cbb, type: 3}
+    name: Whistle
+    volume: 0.605
+  soundPacks:
+  - name: POPO_OI
+    audioList:
+    - clip: {fileID: 8300000, guid: 782084223d3d4f14cb9cd6d6011658f6, type: 3}
+      name: 
+      volume: 1
+    - clip: {fileID: 8300000, guid: bf32b0b95cd941f4cb6dcb3fe4ba2a5f, type: 3}
+      name: 
+      volume: 1
+    - clip: {fileID: 8300000, guid: 02233aa8ed617d245a98bd17e8ea8faf, type: 3}
+      name: 
+      volume: 1
+    - clip: {fileID: 8300000, guid: 7379c214275cbac4890fbff154b4c5b6, type: 3}
+      name: 
+      volume: 1
+    - clip: {fileID: 8300000, guid: 41e2e6fe1ad2485498493b9df5fb56ea, type: 3}
+      name: 
+      volume: 1
