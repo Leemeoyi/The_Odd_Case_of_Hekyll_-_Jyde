@@ -30,7 +30,7 @@ public class BaseAI : MonoBehaviour
     [SerializeField] float minStandingDuration = 1.0f;
     public float MinStandingDuration { get => minStandingDuration; }
 
-
+    public AudioData audiodata;
     
     protected virtual void Awake()
     {

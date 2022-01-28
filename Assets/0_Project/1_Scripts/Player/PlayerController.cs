@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     PlayerCore playerCore;
     Vector2 movement;
     AnimatorClipInfo[] currentAnim;
+    bool isMoving = false;
 
     void Awake()
     {
@@ -27,7 +28,10 @@ public class PlayerController : MonoBehaviour
         currentAnim = animator.GetCurrentAnimatorClipInfo(0);
         if (currentAnim[0].clip.name == "PlayerTransformToJyde" ||
             currentAnim[0].clip.name == "PlayerTransformToHeckell")
+        {
+            isMoving = false;
             return;
+        }
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -53,11 +57,32 @@ public class PlayerController : MonoBehaviour
 
         if (movement.x != 0 || movement.y != 0)
         {
-            animator.SetBool("IsWalking", true);
+            isMoving = true;
+            animator.SetBool("IsWalking", isMoving);
         }
         else
         {
-            animator.SetBool("IsWalking", false);
+            isMoving = false;
+            animator.SetBool("IsWalking", isMoving);
+        }
+
+        
+        if (isMoving)
+        {
+            if (!AudioManager.instance.SFX_Source.isPlaying)
+                    AudioManager.instance.PlayLoopingSFX(playerCore.audioData, "Footstep");
+        }
+        else
+        {
+            if (AudioManager.instance.SFX_Source.clip != null)
+            {
+                if (AudioManager.instance.SFX_Source.clip.name == "FootstepCombined" &&
+                    AudioManager.instance.SFX_Source.isPlaying)
+                {
+                    //AudioManager.instance.SFX_Source.Stop();
+                    AudioManager.instance.SFX_Source.clip = null;
+                }
+            }
         }
 
         //transform.Translate((movement.normalized * Time.deltaTime) * speed, Space.Self);
@@ -65,6 +90,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        currentAnim = animator.GetCurrentAnimatorClipInfo(0);
         if (currentAnim[0].clip.name == "PlayerTransformToJyde" ||
             currentAnim[0].clip.name == "PlayerTransformToHeckell")
             return;

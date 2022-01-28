@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.Events;
@@ -10,6 +11,8 @@ public class TowniesManager : MonoBehaviour
     public static TowniesManager instance;
 
     CoreManager cm;
+
+    [SerializeField] AudioData audioData;
 
     [SerializeField] int townfolksCount;
     public int TownfolksCount => townfolksCount;
@@ -29,6 +32,9 @@ public class TowniesManager : MonoBehaviour
     List<GameObject> polices = new List<GameObject>();
     public List<GameObject> Polices { get => polices; }
 
+    List<Police> pursuiter = new List<Police>();
+
+
     NodeManager nm;
 
     private void Awake()
@@ -43,6 +49,7 @@ public class TowniesManager : MonoBehaviour
     {
         nm = NodeManager.instance;
         currentFolkCount = townfolksCount;
+        AudioManager.instance.PlayBGM(audioData, "Calm");
 
         int rand = 0;
         int prevRand = 0;
@@ -90,6 +97,42 @@ public class TowniesManager : MonoBehaviour
         }
     }
 
+    public void AddPursuiter(Police popo)
+    {
+        if (pursuiter.Contains(popo))
+            return;
+        
+        pursuiter.Add(popo);
+        CheckPoliceChase();
+    }
+
+    public void RemovePursuiter(Police popo)
+    {
+        pursuiter.Remove(popo);
+        CheckPoliceChase();
+    }
+    
+    void CheckPoliceChase()
+    {
+        if (pursuiter.Any())
+        {
+            if (AudioManager.instance.BGM_Source.clip.name != "HeckyllandJyde_ChaseLoop")
+            {
+                AudioManager.instance.BGM_Source.Stop();
+                AudioManager.instance.PlayBGM(audioData, "Chase");
+            }
+        }
+        else
+        {
+            if (AudioManager.instance.BGM_Source.clip.name != "HeckyllandJyde_Loop")
+            {
+                AudioManager.instance.BGM_Source.Stop();
+                AudioManager.instance.PlayBGM(audioData, "Calm");
+            }
+        }
+            
+    }
+    
     //! add police and remove townfolk
     public void KillTownfolk(GameObject deadFolk)
     {

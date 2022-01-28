@@ -52,8 +52,8 @@ public class Police : BaseAI
         
         mask = LayerMask.GetMask("Default");
         var wandering = new Wandering(this, agent, anim);
-        var chase = new Chase(this, agent, anim, pc);
-        var searching = new Searching(this, agent, anim, pc);
+        var chase = new Chase(this, agent, anim, pc, TowniesManager.instance);
+        var searching = new Searching(this, agent, anim, pc, TowniesManager.instance);
 
 
         stateMachine.AddAnyTransition(chase, PlayerOnSight());
@@ -81,7 +81,7 @@ public class Police : BaseAI
         {
             pc.gameObject.SetActive(false);
             CoreManager.instance.GameOver();
-            print("Caught the player");
+            AudioManager.instance.SFX_Source.Stop();
         }
 
         stateMachine.Tick();

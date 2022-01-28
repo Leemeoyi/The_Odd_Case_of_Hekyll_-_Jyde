@@ -9,6 +9,7 @@ public class Chase : IState
     NavMeshAgent agent;
     Animator anim;
     PlayerCore playercore;
+    TowniesManager tm;
     Vector2 randInsideCircle;
     float originalSpeed;
     
@@ -16,18 +17,27 @@ public class Chase : IState
 
     float timer;
     float startChaseTime = 0.75f;
+    bool beganChase = false;
 
-    public Chase(Police policeAI, NavMeshAgent agent, Animator anim, PlayerCore playercore)
+    public Chase(Police policeAI, NavMeshAgent agent, Animator anim, PlayerCore playercore, TowniesManager tm)
     {
         this.policeAI = policeAI;
         this.agent = agent;
         this.anim = anim;
         this.playercore = playercore;
+        this.tm = tm;
         originalSpeed = policeAI.Speed;
+        beganChase = false;
     }
     
     public void OnEnter()
     {
+        if (AudioManager.instance.BGM_Source.clip.name == "HeckyllandJyde_Loop")
+        {
+            AudioManager.instance.BGM_Source.Stop();
+        }
+        
+        AudioManager.instance.PlayRandomSFX(policeAI.audiodata, "POPO_OI");
         agent.speed = policeAI.ChaseSpeed;
         agent.ResetPath();
         policeAI.IsPursing = true;
@@ -41,6 +51,7 @@ public class Chase : IState
     public void OnExit()
     {
         agent.speed = originalSpeed;
+        beganChase = false;
     }
 
     public void Tick()
@@ -48,7 +59,13 @@ public class Chase : IState
         timer += Time.deltaTime;
         if (timer < startChaseTime)
             return;
-        
+
+        if (!beganChase)
+        {
+            tm.AddPursuiter(policeAI);
+            AudioManager.instance.PlaySFX(policeAI.audiodata, "Whistle");
+            beganChase = true;
+        }
 
         if (policeAI.IsOnSight)
         {
@@ -65,4 +82,10 @@ public class Chase : IState
         
         agent.SetDestination(policeAI.LastPos);
     }
+
+    IEnumerator StartChasing()
+    {
+        yield return new WaitForSeconds(startChaseTime);
+    }
+    
 }

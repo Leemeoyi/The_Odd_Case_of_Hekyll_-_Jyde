@@ -8,6 +8,8 @@ public class PlayerCore : MonoBehaviour
     public static PlayerCore instance;
     public int potionNum = 3;
     public float radiusSize = 1.5f;
+
+    public AudioData audioData;
     
     bool justUsedPotion = false;
     public bool JustUsedPotion
@@ -87,6 +89,7 @@ public class PlayerCore : MonoBehaviour
 
     public void TransformingToJyde()
     {
+        AudioManager.instance.PlaySFX(audioData, "PotionTransform");
         timer = potionTime;
         transformationTimer = transformationTime;
         justUsedPotion = true;
@@ -96,6 +99,7 @@ public class PlayerCore : MonoBehaviour
 
     public void TransformingToHeckyll()
     {
+        AudioManager.instance.PlaySFX(audioData, "RevertTransform");
         isHeckyll = true;
         justUsedPotion = false;
     }

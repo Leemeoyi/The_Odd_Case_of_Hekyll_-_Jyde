@@ -2,7 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ad7265f-f27e-4153-8510-4c826b15c8bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData/GameplayMusicAudioData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData/GameplayMusicAudioData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData/PlayerAudioData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData/PlayerAudioData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData/PoliceAudioData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData/PoliceAudioData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Button Press.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Button Press.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Footstep 1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Footstep 1.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Footstep 2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Footstep 2.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/FootstepCombined.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/FootstepCombined.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Kill.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Kill.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Police Whistle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Police Whistle.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Potion Transform.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Potion Transform.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Revert Transform.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/Revert Transform.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_Brandon.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_Brandon.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_Chris.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_Chris.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_HY.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_HY.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_Ivan.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_Ivan.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_Jone.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/oi_Jone.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Brandon Female.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Brandon Female.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Chris.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Chris.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_HY.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_HY.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Ivan Female.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Ivan Female.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Ivan.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Ivan.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Jone.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioSources/urgh_Jone.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/BGM.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/BGM/HeckyllandJyde_ChaseLoop.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/BGM/HeckyllandJyde_ChaseLoop.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/BGM/HeckyllandJyde_Loop.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/BGM/HeckyllandJyde_Loop.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/BGM/HeckyllandJyde_TitleLoop.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/BGM/HeckyllandJyde_TitleLoop.wav.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/BaseAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/BaseAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Police.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Police.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Chase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Chase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Searching.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Searching.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/TowniesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/TowniesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/Police.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/Police.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +129,7 @@
       <workItem from="1643189270997" duration="10145000" />
       <workItem from="1643204969328" duration="6810000" />
       <workItem from="1643284617537" duration="14644000" />
+      <workItem from="1643344195772" duration="6562000" />
     </task>
     <servers />
   </component>

@@ -9,24 +9,25 @@ public class Searching : IState
     NavMeshAgent agent;
     Animator anim;
     PlayerCore playercore;
+    TowniesManager tm;
 
     float originalSpeed;
 
     float timer;
     
 
-    public Searching(Police policeAI, NavMeshAgent agent, Animator anim, PlayerCore playercore)
+    public Searching(Police policeAI, NavMeshAgent agent, Animator anim, PlayerCore playercore, TowniesManager tm)
     {
         this.policeAI = policeAI;
         this.agent = agent;
         this.anim = anim;
         this.playercore = playercore;
+        this.tm = tm;
         originalSpeed = policeAI.Speed;
     }
     
     public void OnEnter()
     {
-        
         agent.speed = policeAI.ChaseSpeed;
         policeAI.LastPos = playercore.transform.position;
         timer = policeAI.SearchingTime;
@@ -36,6 +37,7 @@ public class Searching : IState
     {
         agent.speed = originalSpeed;
         policeAI.LastPos = Vector2.zero;
+        tm.RemovePursuiter(policeAI);
     }
 
     public void Tick()
