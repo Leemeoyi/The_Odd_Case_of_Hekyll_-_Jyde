@@ -51,6 +51,7 @@ MonoBehaviour:
   speed: 3
   maxStandingDuration: 3
   minStandingDuration: 1
+  audiodata: {fileID: 0}
 --- !u!195 &1339972712774910450
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -132,8 +133,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9756402c145d3f14dafee0be4eb71eca, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -8957448245439518519, guid: 5df4abd2cdb0faf4d86bdc66d17f936e, type: 3}
+  m_Color: {r: 1, g: 0.9610575, b: 0.6650944, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
