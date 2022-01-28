@@ -53,7 +53,7 @@ public class Chase : IState
         if (policeAI.IsOnSight)
         {
             anim.SetBool("IsWalking", true);
-            if (Vector2.Distance(policeAI.transform.position, playercore.transform.position) > playercore.radiusSize - 1.5f)
+            if (Vector2.SqrMagnitude(policeAI.transform.position - playercore.transform.position) > playercore.radiusSize - 1.5f)
             {
                 policeAI.LastPos = playercore.transform.position;
             }
