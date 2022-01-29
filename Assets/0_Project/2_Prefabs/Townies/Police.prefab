@@ -150,7 +150,7 @@ MonoBehaviour:
   chaseSpeed: 4.3
   outerDetectionRadius: 4
   innerDetectionRadius: 2
-  collisionRadius: 0.8
+  collisionRadius: 1
   searchingTime: 5
   outerDetectionCircle: {fileID: 2588744295400325396}
   innerDetectionCircle: {fileID: 6124980670627375868}
@@ -201,7 +201,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.6}
