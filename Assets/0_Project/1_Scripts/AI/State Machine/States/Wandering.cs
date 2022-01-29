@@ -55,6 +55,13 @@ public class Wandering : IState
 
     public void Tick()
     {
+        if (baseAI.playerCore.playerAction)
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;;
+            return;
+        }
+        
         if (Reached == true)
         {
             timer += Time.deltaTime;

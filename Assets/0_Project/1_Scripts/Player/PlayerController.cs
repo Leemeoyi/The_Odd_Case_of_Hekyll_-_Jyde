@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     PlayerCore playerCore;
     Vector2 movement;
-    AnimatorClipInfo[] currentAnim;
+    [HideInInspector] public AnimatorClipInfo[] currentAnim;
     bool isMoving = false;
 
     void Awake()
@@ -27,11 +27,16 @@ public class PlayerController : MonoBehaviour
     {
         currentAnim = animator.GetCurrentAnimatorClipInfo(0);
         if (currentAnim[0].clip.name == "PlayerTransformToJyde" ||
-            currentAnim[0].clip.name == "PlayerTransformToHeckell")
+            currentAnim[0].clip.name == "PlayerTransformToHeckell" || currentAnim[0].clip.name == "PrepAttack"
+            ||  currentAnim[0].clip.name == "Attack")
         {
+            AudioManager.instance.SFX_Source.clip = null;
             isMoving = false;
+            playerCore.playerAction = true;
             return;
         }
+        else
+            playerCore.playerAction = false;
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -49,10 +54,13 @@ public class PlayerController : MonoBehaviour
         if (movement.x > 0)
         {
             sr.flipX = false;
+            playerCore.isLeft = false;
+
         }
         else if (movement.x < 0)
         {
             sr.flipX = true;
+            playerCore.isLeft = true;
         }
 
         if (movement.x != 0 || movement.y != 0)
@@ -92,8 +100,16 @@ public class PlayerController : MonoBehaviour
     {
         currentAnim = animator.GetCurrentAnimatorClipInfo(0);
         if (currentAnim[0].clip.name == "PlayerTransformToJyde" ||
-            currentAnim[0].clip.name == "PlayerTransformToHeckell")
+            currentAnim[0].clip.name == "PlayerTransformToHeckell"
+            || currentAnim[0].clip.name == "PrepAttack"
+            || currentAnim[0].clip.name == "Attack")
+        {
+            playerCore.playerAction = true;
             return;
+        }
+        else
+            playerCore.playerAction = false;
+        
         rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
         
     }

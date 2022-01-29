@@ -70,8 +70,10 @@ public class Police : BaseAI
         Func<bool> ForgetPlayer() => () => (!isPursuing );
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         if (prevPos < transform.position.x)
             sr.flipX = false;
         else if (prevPos > transform.position.x)

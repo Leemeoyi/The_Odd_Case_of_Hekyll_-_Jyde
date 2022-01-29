@@ -2,7 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ad7265f-f27e-4153-8510-4c826b15c8bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData/TownfolkAudioData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Audio/AudioData/TownfolkAudioData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Chasing.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Chasing.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Confused.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Confused.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_POint.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_POint.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/char_bobby_spritesheet_10.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/char_bobby_spritesheet_10.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/char_bobby_spritesheet_2.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/char_bobby_spritesheet_2.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/char_bobby_spritesheet_6.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/char_bobby_spritesheet_6.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/char_bobby_spritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/char_bobby_spritesheet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/char_bobby_spritesheet_point.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/char_bobby_spritesheet_point.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Townies/Animation/citizen_dead 1.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Townies/Animation/citizen_dead 1.controller.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Odd_Case_of_Hekyll_-_Jyde/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/0_Scene/Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/BaseAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/BaseAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Police.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Police.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Chase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Chase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Wandering.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/States/Wandering.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Townfolk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/State Machine/Townfolk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/TowniesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/AI/TowniesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/1_Scripts/Player/PlayerCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/TownFolk.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/2_Prefabs/Townies/TownFolk.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Animation/PlayerAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Animation/PlayerAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/Attack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Player/Animation/Attack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/PoliceAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/PoliceAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Walking.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/0_Project/3_Assets/Character/Police/Animation/Police_Walking.anim" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +102,8 @@
       <workItem from="1643189270997" duration="10145000" />
       <workItem from="1643204969328" duration="6810000" />
       <workItem from="1643284617537" duration="14644000" />
-      <workItem from="1643344195772" duration="7842000" />
+      <workItem from="1643344195772" duration="8589000" />
+      <workItem from="1643429373920" duration="4562000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,10 +14,12 @@ public enum CivilianTypes
 public class BaseAI : MonoBehaviour
 {
     protected NavMeshAgent agent;
-    protected Animator anim;
+    [HideInInspector] public Animator anim;
     protected SpriteRenderer sr;
     NodeManager nodeManager;
     protected float prevPos;
+    public PlayerCore playerCore;
+    
     public NodeManager NodeManager { get => nodeManager; }
 
     protected StateMachine stateMachine;
@@ -45,6 +48,12 @@ public class BaseAI : MonoBehaviour
     protected virtual void Start()
     {
         nodeManager = NodeManager.instance;
+        playerCore = PlayerCore.instance;
         agent.speed = Speed;
+    }
+
+    protected virtual void Update()
+    {
+
     }
 }

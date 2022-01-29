@@ -145,6 +145,6 @@ public class TowniesManager : MonoBehaviour
         GameObject temp = Instantiate(policePrefab, nm.Nodes[rand].transform.position, Quaternion.identity);
 
         polices.Add(temp);
-        Destroy(deadFolk);
+        deadFolk.GetComponent<Townfolk>().SetDead();
     }
 }

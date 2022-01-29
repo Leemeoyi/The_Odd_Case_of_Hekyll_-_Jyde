@@ -38,12 +38,12 @@ public class Chase : IState
         }
         
         AudioManager.instance.PlayRandomSFX(policeAI.audiodata, "POPO_OI");
+        anim.SetTrigger("NoticeMeSenpai");
         agent.speed = policeAI.ChaseSpeed;
         agent.ResetPath();
         policeAI.IsPursing = true;
         policeAI.LastPos = playercore.transform.position;
         randInsideCircle = Random.insideUnitCircle * playercore.radiusSize;
-        anim.speed = 1.5f;
         agent.isStopped = false;
         timer = 0;
     }
@@ -51,11 +51,19 @@ public class Chase : IState
     public void OnExit()
     {
         agent.speed = originalSpeed;
+        anim.SetBool("IsChasing", false);
         beganChase = false;
     }
 
     public void Tick()
     {
+        if (policeAI.playerCore.playerAction)
+        {
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+            return;
+        }
+
         timer += Time.deltaTime;
         if (timer < startChaseTime)
             return;
@@ -63,6 +71,7 @@ public class Chase : IState
         if (!beganChase)
         {
             tm.AddPursuiter(policeAI);
+            anim.SetBool("IsChasing", true);
             AudioManager.instance.PlaySFX(policeAI.audiodata, "Whistle");
             beganChase = true;
         }
@@ -70,6 +79,7 @@ public class Chase : IState
         if (policeAI.IsOnSight)
         {
             anim.SetBool("IsWalking", true);
+            agent.isStopped = false;
             if (Vector2.SqrMagnitude(policeAI.transform.position - playercore.transform.position) > playercore.radiusSize - 1.5f)
             {
                 policeAI.LastPos = playercore.transform.position;
@@ -81,6 +91,8 @@ public class Chase : IState
         }
         
         agent.SetDestination(policeAI.LastPos);
+
+
     }
 
     IEnumerator StartChasing()

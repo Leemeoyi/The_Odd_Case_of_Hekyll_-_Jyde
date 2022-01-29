@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class PlayerCore : MonoBehaviour
     public static PlayerCore instance;
     public int potionNum = 3;
     public float radiusSize = 1.5f;
+    public Transform leftPos;
+    public Transform rightPos;
+    public bool isLeft;
 
     public AudioData audioData;
     
@@ -57,6 +61,10 @@ public class PlayerCore : MonoBehaviour
     [Header("Event")]
     public UnityEvent killEvents;
 
+    PlayerController playerControl;
+
+    public bool playerAction = false;
+    
     // method
     void Awake()
     {
@@ -64,12 +72,25 @@ public class PlayerCore : MonoBehaviour
             Destroy(this.gameObject);
         else
             instance = this;
+
+        playerControl = GetComponent<PlayerController>();
     }
 
     private void Update()
     {
         if (isHeckyll && Input.GetKeyDown(KeyCode.E) && collidedObj != null)
         {
+            if (collidedObj.GetComponent<Townfolk>().IsDead)
+            {
+                return;
+            }
+            
+            playerControl.animator.SetTrigger("IsAttacking");
+            AudioManager.instance.PlaySFX(audioData, "Kill");
+            playerAction = true;
+            
+            collidedObj.transform.position = isLeft ? leftPos.position : rightPos.position;
+
             TowniesManager.instance.KillTownfolk(collidedObj);
             killEvents.Invoke();
         }

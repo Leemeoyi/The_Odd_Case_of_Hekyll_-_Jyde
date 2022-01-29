@@ -4288,7 +4288,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d08b03e25a9096a4e91ea8d4bdd73736, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -62150,14 +62150,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6132169591417555294, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6132169591417555294, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6132169591417555295, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
       propertyPath: drinkPotionEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -62206,10 +62198,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
-      propertyPath: audioData
-      value: 
-      objectReference: {fileID: 11400000, guid: 15e7eee15272b7b4dbc7f6e3ed416281, type: 2}
     - target: {fileID: 6132169591417555298, guid: 84c36a7c7ed20a643bea5ad417d2c80e, type: 3}
       propertyPath: killEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
