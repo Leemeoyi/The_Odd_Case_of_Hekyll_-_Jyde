@@ -12,17 +12,15 @@ public class CoreManager : MonoBehaviour
     [Header("UI")]
     public Text policeText;
     public Text folkText;
-    public Text gameStateText;
+    public Image gameOverBackground;
 
     // Skill
     public Text skillNumText;
     public Image cooldownImg;
 
     [Header("Game State")]
-    [Multiline]
-    public string winText;
-    [Multiline]
-    public string lossText;
+    public Sprite winSprite;
+    public Sprite lossSprite;
 
     [Header("Events")]
     public UnityEvent gameOverEvents;
@@ -135,11 +133,11 @@ public class CoreManager : MonoBehaviour
 
     void Win()
     {
-        gameStateText.text = winText;
+        gameOverBackground.sprite = winSprite;
     }
 
     void Loss()
     {
-        gameStateText.text = lossText;
+        gameOverBackground.sprite = lossSprite;
     }
 }
