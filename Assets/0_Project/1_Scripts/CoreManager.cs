@@ -37,7 +37,6 @@ public class CoreManager : MonoBehaviour
     float potionRemainingCooldownTime => PlayerCore.instance.Timer;
 
     // local variable
-    float initialTimeScale;
     IEnumerator cooldownCoroutine;
 
     // method
@@ -49,7 +48,7 @@ public class CoreManager : MonoBehaviour
             instance = this;
 
         playTime = 0f;
-        initialTimeScale = Time.timeScale;
+        Resume();
     }
 
     void Start()
@@ -67,13 +66,13 @@ public class CoreManager : MonoBehaviour
     [Button]
     public void Resume()
     {
-        Time.timeScale = initialTimeScale;
+        Time.timeScale = 1f;
     }
 
     [Button]
     public void Pause()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
     }
 
     //#region Skill
