@@ -8,7 +8,6 @@ using NaughtyAttributes;
 public class CoreManager : MonoBehaviour
 {
     public static CoreManager instance;
-    public static GameSceneManager sceneManager;
 
     [Header("UI")]
     public Text policeText;
@@ -44,7 +43,6 @@ public class CoreManager : MonoBehaviour
     // method
     void Awake()
     {
-        sceneManager = GameSceneManager.instance;
         if (instance != null)
             Destroy(this.gameObject);
         else
