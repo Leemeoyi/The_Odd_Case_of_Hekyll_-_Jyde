@@ -14,6 +14,10 @@ public class Police : BaseAI
     [SerializeField] float collisionRadius = 1f;
     [SerializeField] float searchingTime;
 
+    [Header("Collider2D")]
+    [SerializeField] CircleCollider2D outerDetectionCircle;
+    [SerializeField] CircleCollider2D innerDetectionCircle;
+
     public float ChaseSpeed => chaseSpeed;
     public float SearchingTime => searchingTime;
 
@@ -49,7 +53,9 @@ public class Police : BaseAI
     protected override void Start()
     {
         base.Start();
-        
+        outerDetectionCircle.radius = outerDetectionRadius;
+        innerDetectionCircle.radius = innerDetectionRadius;
+
         mask = LayerMask.GetMask("Default");
         var wandering = new Wandering(this, agent, anim);
         var chase = new Chase(this, agent, anim, pc, TowniesManager.instance);
@@ -67,13 +73,13 @@ public class Police : BaseAI
         void At(IState to, IState from, Func<bool> condition) => stateMachine.AddTransition(to, from, condition);
         Func<bool> PlayerOnSight() => () => (isOnSight && pc.IsHeckyll);
         Func<bool> PlayerLoseSight() => () => (!isOnSight);
-        Func<bool> ForgetPlayer() => () => (!isPursuing );
+        Func<bool> ForgetPlayer() => () => (!isPursuing);
     }
 
     protected override void Update()
     {
         base.Update();
-        
+
         if (prevPos < transform.position.x)
             sr.flipX = false;
         else if (prevPos > transform.position.x)
@@ -134,7 +140,8 @@ public class Police : BaseAI
         Gizmos.DrawWireSphere(transform.position, outerDetectionRadius);
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, innerDetectionRadius);
+        Vector3 offset = innerDetectionCircle.offset;
+        Gizmos.DrawWireSphere(transform.position + offset, innerDetectionRadius);
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, collisionRadius);
@@ -142,6 +149,7 @@ public class Police : BaseAI
 
     void OnValidate()
     {
-        GetComponent<CircleCollider2D>().radius = outerDetectionRadius;
+        outerDetectionCircle.radius = outerDetectionRadius;
+        innerDetectionCircle.radius = innerDetectionRadius;
     }
 }

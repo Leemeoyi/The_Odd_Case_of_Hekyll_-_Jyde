@@ -143,15 +143,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   playerCore: {fileID: 0}
-  speed: 2.5
+  speed: 2.25
   maxStandingDuration: 3
   minStandingDuration: 1
   audiodata: {fileID: 11400000, guid: c2d56712d54f133469ac89abf6ac487a, type: 2}
   chaseSpeed: 4.3
-  outerDetectionRadius: 5.34
-  innerDetectionRadius: 2.54
-  collisionRadius: 1
+  outerDetectionRadius: 4
+  innerDetectionRadius: 2
+  collisionRadius: 0.8
   searchingTime: 5
+  outerDetectionCircle: {fileID: 2588744295400325396}
+  innerDetectionCircle: {fileID: 6124980670627375868}
 --- !u!50 &5554547761808460584
 Rigidbody2D:
   serializedVersion: 4
@@ -188,7 +190,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.34
+  m_Radius: 4
 --- !u!58 &6124980670627375868
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -202,6 +204,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01, y: -0.61}
+  m_Offset: {x: 0, y: -0.6}
   serializedVersion: 2
-  m_Radius: 0.21
+  m_Radius: 2

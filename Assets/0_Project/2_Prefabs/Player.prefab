@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f41a4ebb1423d408ecde637a967184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionNum: 3
+  potionNum: 5
   radiusSize: 2.42
   leftPos: {fileID: 1252914431}
   rightPos: {fileID: 1061674400}
