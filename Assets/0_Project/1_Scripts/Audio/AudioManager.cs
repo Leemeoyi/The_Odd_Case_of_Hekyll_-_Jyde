@@ -107,11 +107,6 @@ public class AudioManager : MonoBehaviour
             BGM_Source.loop = loop;
 
             BGM_Source.Play();
-            Debug.Log("Playing BGM: " + _name);
-        }
-        else
-        {
-            Debug.Log("No BGM: " + _name);
         }
     }
 
