@@ -2582,6 +2582,7 @@ MonoBehaviour:
   townfolksCount: 30
   policesCount: 10
   townfolkPrefab: {fileID: 1339972712774910449, guid: 75d176f19ff14af44a1cd1dc285706fd, type: 3}
+  townfolkFemalePrefab: {fileID: 4791890260715282484, guid: dfbd0e7200e81d9498ee59d2e4d976fd, type: 3}
   policePrefab: {fileID: 548067481425912656, guid: a6969b5403d570f46abc337a5a1df200, type: 3}
   currentFolkCount: 0
 --- !u!4 &702966984

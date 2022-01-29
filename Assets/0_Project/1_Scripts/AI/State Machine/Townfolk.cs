@@ -7,7 +7,7 @@ public class Townfolk : BaseAI
 
     bool isDead = false;
     public bool IsDead => isDead;
-    
+
 
     protected override void Start()
     {
@@ -21,11 +21,11 @@ public class Townfolk : BaseAI
     {
         if (isDead)
             return;
-        
+
         base.Update();
-        
+
         stateMachine.Tick();
-        
+
         if (prevPos < transform.position.x)
             sr.flipX = false;
         else if (prevPos > transform.position.x)
@@ -37,7 +37,7 @@ public class Townfolk : BaseAI
     public void SetDead()
     {
         Invoke("SetDeadAnimation", 0.5f);
-        Invoke("PLayDeadAudio", 0.3f);
+        Invoke("PlayDeadAudio", 0.3f);
         agent.isStopped = true;
         agent.velocity = Vector3.zero;
         isDead = true;
@@ -49,7 +49,7 @@ public class Townfolk : BaseAI
         anim.SetTrigger("IsDead");
     }
 
-    void PLayDeadAudio()
+    void PlayDeadAudio()
     {
         AudioManager.instance.PlayRandomSFX(audiodata, "Dead");
     }

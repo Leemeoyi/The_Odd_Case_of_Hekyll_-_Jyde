@@ -21,7 +21,9 @@ public class TowniesManager : MonoBehaviour
     public int PolicesCount => policesCount;
 
 
+    [Header("Prefabs")]
     [SerializeField] GameObject townfolkPrefab;
+    [SerializeField] GameObject townfolkFemalePrefab;
     [SerializeField] GameObject policePrefab;
 
     List<GameObject> townfolks = new List<GameObject>();
@@ -36,6 +38,12 @@ public class TowniesManager : MonoBehaviour
 
 
     NodeManager nm;
+
+    /**
+     *  odd = female
+     *  even = male
+     */
+    int genderCount = 0;
 
     private void Awake()
     {
@@ -65,8 +73,11 @@ public class TowniesManager : MonoBehaviour
                 {
                     Vector2 spawnPos = nm.Nodes[rand].transform.position;
                     spawnPos += Random.insideUnitCircle * nm.Nodes[rand].NodeRadius;
-                    
-                    GameObject temp = Instantiate(townfolkPrefab, spawnPos, Quaternion.identity);
+
+                    genderCount = (genderCount + 1) % 2;
+                    bool isMalePrefab = genderCount == 0;
+                    GameObject spwanTarget = isMalePrefab ? townfolkPrefab : townfolkFemalePrefab;
+                    GameObject temp = Instantiate(spwanTarget, spawnPos, Quaternion.identity);
                     temp.name = "Townfolk " + i;
                     prevRand = rand;
                     townfolks.Add(temp);
@@ -86,7 +97,8 @@ public class TowniesManager : MonoBehaviour
                 {
                     Vector2 spawnPos = nm.Nodes[rand].transform.position;
                     spawnPos += Random.insideUnitCircle * nm.Nodes[rand].NodeRadius;
-                    
+
+
                     GameObject temp = Instantiate(policePrefab, spawnPos, Quaternion.identity);
                     temp.name = "Police " + i;
                     prevRand = rand;
@@ -101,7 +113,7 @@ public class TowniesManager : MonoBehaviour
     {
         if (pursuiter.Contains(popo))
             return;
-        
+
         pursuiter.Add(popo);
         CheckPoliceChase();
     }
@@ -111,7 +123,7 @@ public class TowniesManager : MonoBehaviour
         pursuiter.Remove(popo);
         CheckPoliceChase();
     }
-    
+
     void CheckPoliceChase()
     {
         if (pursuiter.Any())
@@ -130,9 +142,9 @@ public class TowniesManager : MonoBehaviour
                 AudioManager.instance.PlayBGM(audioData, "Calm");
             }
         }
-            
+
     }
-    
+
     //! add police and remove townfolk
     public void KillTownfolk(GameObject deadFolk)
     {

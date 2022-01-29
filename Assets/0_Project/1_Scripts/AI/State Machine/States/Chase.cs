@@ -38,7 +38,7 @@ public class Chase : IState
         }
 
         AudioManager.instance.PlayRandomSFX(policeAI.audiodata, "POPO_OI");
-        anim.SetBool("IsStartChasing", true);
+        anim.SetTrigger("IsChaseStart");
         // anim.SetTrigger("NoticeMeSenpai");
         agent.speed = policeAI.ChaseSpeed;
         agent.ResetPath();
@@ -72,7 +72,6 @@ public class Chase : IState
         if (!beganChase)
         {
             tm.AddPursuiter(policeAI);
-            anim.SetBool("IsStartChasing", false);
             anim.SetBool("IsChasing", true);
             AudioManager.instance.PlaySFX(policeAI.audiodata, "Whistle");
             beganChase = true;
