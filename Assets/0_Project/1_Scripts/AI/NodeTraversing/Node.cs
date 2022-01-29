@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
+#if UNITY_EDITOR
 using TNRD.Utilities;
+#endif
 using UnityEngine;
 
 public class Node : MonoBehaviour
 {
     NodeManager nodeManager;
-    
+
     [SerializeField] List<Node> connectedNode;
 
     [SerializeField] float nodeRadius = 1f;
@@ -22,7 +24,9 @@ public class Node : MonoBehaviour
 
     public void OnCreate(GameObject go)
     {
+#if UNITY_EDITOR
         this.gameObject.SetIcon(ShapeIcon.CircleBlue);
+#endif
         nodeManager = GetComponentInParent<NodeManager>();
         connectedNode = new List<Node>();
         connectedNode.Add(go.GetComponent<Node>());
@@ -35,10 +39,12 @@ public class Node : MonoBehaviour
 
     public void OnCreate()
     {
+#if UNITY_EDITOR
         this.gameObject.SetIcon(ShapeIcon.CircleBlue);
+#endif
         nodeManager = GetComponentInParent<NodeManager>();
     }
-    
+
 
     [Button("Add Node", enabledMode: EButtonEnableMode.Editor)]
     void AddNode()

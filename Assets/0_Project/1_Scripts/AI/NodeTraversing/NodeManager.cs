@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
+#endif
 using UnityEngine;
 
 public class NodeManager : MonoBehaviour
@@ -32,15 +34,15 @@ public class NodeManager : MonoBehaviour
             }
             nodes.Clear();
         }
-        
+
         nodes = new List<Node>();
-        
+
         GameObject temp = new GameObject("Node" + nodes.Count, typeof(Node));
         temp.transform.SetParent(this.transform);
         temp.GetComponent<Node>().OnCreate();
         nodes.Add(temp.GetComponent<Node>());
     }
-    
+
     public GameObject AddNode(GameObject node)
     {
         GameObject temp = new GameObject("Node" + nodes.Count, typeof(Node));
@@ -48,13 +50,13 @@ public class NodeManager : MonoBehaviour
         temp.GetComponent<Node>().OnCreate(node);
 
         nodes.Add(temp.GetComponent<Node>());
-        
+
         return temp;
     }
-    
+
     void UpdateNodes()
     {
-        
+
     }
 
 }
