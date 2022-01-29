@@ -788,7 +788,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Aidan                 @N0Name
+  m_Text: Brandon            @Brandon
 --- !u!1 &3221534941021641941
 GameObject:
   m_ObjectHideFlags: 0

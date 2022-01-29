@@ -8,9 +8,13 @@ public class InputEventManager : MonoBehaviour
     public KeyCode pauseKey;
     public UnityEvent resumeEvents, pauseEvents;
 
+    public KeyCode continueKey;
+    public UnityEvent continueEvents;
+
     void Update()
     {
         pauseCase();
+        continueCase();
     }
 
     void pauseCase()
@@ -25,6 +29,14 @@ public class InputEventManager : MonoBehaviour
             {
                 pauseEvents.Invoke();
             }
+        }
+    }
+
+    void continueCase()
+    {
+        if (Input.GetKeyDown(continueKey))
+        {
+            continueEvents.Invoke();
         }
     }
 }

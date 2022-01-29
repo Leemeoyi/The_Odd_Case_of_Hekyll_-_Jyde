@@ -35,13 +35,14 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.zip
 
 #Logs
 Logs/
+*.log
 
 #UserSettings
 UserSettings/
 
 # vs code preferences
 .vscode/
-*.log
