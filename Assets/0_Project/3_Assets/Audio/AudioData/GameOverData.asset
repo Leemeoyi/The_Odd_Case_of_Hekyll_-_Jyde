@@ -15,8 +15,8 @@ MonoBehaviour:
   audioList:
   - clip: {fileID: 8300000, guid: 17089f7bdb2ad34459fa17c626b58054, type: 3}
     name: Win
-    volume: 0.7
+    volume: 1
   - clip: {fileID: 8300000, guid: 171a20eda1b406345bdd9beea73bbedf, type: 3}
     name: Loss
-    volume: 0.7
+    volume: 1
   soundPacks: []
