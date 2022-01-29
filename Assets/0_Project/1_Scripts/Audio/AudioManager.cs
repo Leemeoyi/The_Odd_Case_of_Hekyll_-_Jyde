@@ -3,122 +3,126 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
+{
+    public static AudioManager instance;
+
+    public AudioSource SFX_Source, BGM_Source;
+
+
+    [SerializeField] float bgmVolume;
+    [SerializeField] float sfxVolume;
+
+    void Awake()
     {
-        public static AudioManager instance;
+        if (instance != null)
+            Destroy(this.gameObject);
+        else
+            instance = this;
+    }
 
-        public AudioSource SFX_Source, BGM_Source;
-        
+    public void SetVolume()
+    {
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
+        SFX_Source.volume = sfxVolume;
+    }
 
-        [SerializeField] float bgmVolume;
-        [SerializeField] float sfxVolume;
+    public void SetBGMVolume()
+    {
+        PlayerPrefs.SetFloat("BGMVolume", bgmVolume);
+        BGM_Source.volume = bgmVolume;
+    }
 
-        void Awake()
+
+
+    SoundFile GetSound(AudioData _audioType, string _name)
+    {
+        List<SoundFile> temp = new List<SoundFile>(_audioType.audioList);
+
+        for (int i = 0; i < temp.Count; i++)
         {
-            if (instance != null)
-                Destroy(this.gameObject);
-            else
-                instance = this;
-        }
-
-        public void SetVolume()
-        {
-            PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
-            SFX_Source.volume = sfxVolume;
-
-        }
-
-        public void SetBGMVolume()
-        {
-            PlayerPrefs.SetFloat("BGMVolume", bgmVolume);
-            BGM_Source.volume = bgmVolume;
-        }
-        
-
-
-        SoundFile GetSound(AudioData _audioType, string _name)
-        {
-            List<SoundFile> temp = new List<SoundFile>(_audioType.audioList);
-
-            for (int i = 0; i < temp.Count; i++)
+            if (temp[i].name == _name)
             {
-                if (temp[i].name == _name)
-                {
-                    return temp[i];
-                }
-            }
-
-            return null;
-        }
-
-        SoundFile GetRandomSound(AudioData _audioType, string _name)
-        {
-            List<SoundPack> temp = new List<SoundPack>(_audioType.soundPacks);
-
-            for (int i = 0; i < temp.Count; i++)
-            {
-                if (temp[i].name == _name)
-                {
-                    return temp[i].audioList[Random.Range(0, temp[i].audioList.Count)];
-                }
-            }
-
-            return null;
-        }
-
-        public void PlaySFX(AudioData _audioData, string _name)
-        {
-            SoundFile sound = GetSound(_audioData, _name);
-            if (sound != null)
-            {
-                SFX_Source.volume = sound.volume;
-                SFX_Source.PlayOneShot(sound.clip);
+                return temp[i];
             }
         }
 
-        public void PlayRandomSFX(AudioData _audioData, string _name)
+        return null;
+    }
+
+    SoundFile GetRandomSound(AudioData _audioType, string _name)
+    {
+        List<SoundPack> temp = new List<SoundPack>(_audioType.soundPacks);
+
+        for (int i = 0; i < temp.Count; i++)
         {
-            SoundFile sound = GetRandomSound(_audioData, _name);
-            if (sound != null)
+            if (temp[i].name == _name)
             {
-                SFX_Source.volume = sound.volume;
-                SFX_Source.PlayOneShot(sound.clip);
+                return temp[i].audioList[Random.Range(0, temp[i].audioList.Count)];
             }
         }
 
-        public void PlayLoopingSFX(AudioData _audioData, string _name)
+        return null;
+    }
+
+    public void PlaySFX(AudioData _audioData, string _name)
+    {
+        SoundFile sound = GetSound(_audioData, _name);
+        if (sound != null)
         {
-            SoundFile sound = GetSound(_audioData, _name);
-            if (sound != null)
-            {
-                SFX_Source.volume = sound.volume;
-                SFX_Source.clip = sound.clip;
-                SFX_Source.loop = true;
-
-                SFX_Source.Play();
-            }
-        }
-
-        public void PlayBGM(AudioData _audioData, string _name)
-        {
-            SoundFile sound = GetSound(_audioData, _name);
-            if (sound != null)
-            {
-                BGM_Source.volume = sound.volume;
-                BGM_Source.clip = sound.clip;
-                BGM_Source.loop = true;
-
-                BGM_Source.Play();
-            }
-        }
-
-        public void StopBGM()
-        {
-            BGM_Source.Stop();
-        }
-
-        public void StopAllSound()
-        {
-            SFX_Source.Stop();
-            BGM_Source.Stop();
+            SFX_Source.volume = sound.volume;
+            SFX_Source.PlayOneShot(sound.clip);
         }
     }
+
+    public void PlayRandomSFX(AudioData _audioData, string _name)
+    {
+        SoundFile sound = GetRandomSound(_audioData, _name);
+        if (sound != null)
+        {
+            SFX_Source.volume = sound.volume;
+            SFX_Source.PlayOneShot(sound.clip);
+        }
+    }
+
+    public void PlayLoopingSFX(AudioData _audioData, string _name)
+    {
+        SoundFile sound = GetSound(_audioData, _name);
+        if (sound != null)
+        {
+            SFX_Source.volume = sound.volume;
+            SFX_Source.clip = sound.clip;
+            SFX_Source.loop = true;
+
+            SFX_Source.Play();
+        }
+    }
+
+    public void PlayBGM(AudioData _audioData, string _name, bool loop = true)
+    {
+        SoundFile sound = GetSound(_audioData, _name);
+        if (sound != null)
+        {
+            BGM_Source.volume = sound.volume;
+            BGM_Source.clip = sound.clip;
+            BGM_Source.loop = loop;
+
+            BGM_Source.Play();
+            Debug.Log("Playing BGM: " + _name);
+        }
+        else
+        {
+            Debug.Log("No BGM: " + _name);
+        }
+    }
+
+    public void StopBGM()
+    {
+        BGM_Source.Stop();
+    }
+
+    public void StopAllSound()
+    {
+        SFX_Source.Stop();
+        BGM_Source.Stop();
+    }
+}

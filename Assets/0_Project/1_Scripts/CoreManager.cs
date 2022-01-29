@@ -18,13 +18,16 @@ public class CoreManager : MonoBehaviour
     public Text skillNumText;
     public Image cooldownImg;
 
+    [Header("Sound")]
+    [SerializeField] AudioData gameOverAudio;
+
+
     [Header("Game State")]
     public Sprite winSprite;
     public Sprite lossSprite;
 
     [Header("Events")]
     public UnityEvent gameOverEvents;
-
     public static float playTime;
 
     // private variable
@@ -36,6 +39,7 @@ public class CoreManager : MonoBehaviour
 
     // local variable
     IEnumerator cooldownCoroutine;
+    bool isGameOver;
 
     // method
     void Awake()
@@ -54,6 +58,7 @@ public class CoreManager : MonoBehaviour
         policeText.text = police.ToString();
         folkText.text = folk.ToString();
         skillNumText.text = potionCount.ToString();
+        isGameOver = false;
     }
 
     void Update()
@@ -112,7 +117,16 @@ public class CoreManager : MonoBehaviour
     [Button]
     public void GameOver()
     {
-        Pause();
+        // make sure method triggered only once
+        if (!isGameOver)
+        {
+            isGameOver = true;
+        }
+        else
+        {
+            return;
+        }
+
         gameOverEvents.Invoke();
 
         if (folk > 0)
@@ -129,15 +143,20 @@ public class CoreManager : MonoBehaviour
         {
             StopCoroutine(cooldownCoroutine);
         }
+        Pause();
     }
 
     void Win()
     {
         gameOverBackground.sprite = winSprite;
+        AudioManager.instance.BGM_Source.Stop();
+        AudioManager.instance.PlayBGM(gameOverAudio, "Win", false);
     }
 
     void Loss()
     {
         gameOverBackground.sprite = lossSprite;
+        AudioManager.instance.BGM_Source.Stop();
+        AudioManager.instance.PlayBGM(gameOverAudio, "Loss", false);
     }
 }
