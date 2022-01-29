@@ -12,7 +12,7 @@ public class Chase : IState
     TowniesManager tm;
     Vector2 randInsideCircle;
     float originalSpeed;
-    
+
     Vector2 targetPos;
 
     float timer;
@@ -29,15 +29,16 @@ public class Chase : IState
         originalSpeed = policeAI.Speed;
         beganChase = false;
     }
-    
+
     public void OnEnter()
     {
         if (AudioManager.instance.BGM_Source.clip.name == "HeckyllandJyde_Loop")
         {
             AudioManager.instance.BGM_Source.Stop();
         }
-        
+
         AudioManager.instance.PlayRandomSFX(policeAI.audiodata, "POPO_OI");
+        anim.SetBool("IsStartChasing", true);
         anim.SetTrigger("NoticeMeSenpai");
         agent.speed = policeAI.ChaseSpeed;
         agent.ResetPath();
@@ -71,6 +72,7 @@ public class Chase : IState
         if (!beganChase)
         {
             tm.AddPursuiter(policeAI);
+            anim.SetBool("IsStartChasing", false);
             anim.SetBool("IsChasing", true);
             AudioManager.instance.PlaySFX(policeAI.audiodata, "Whistle");
             beganChase = true;
@@ -89,7 +91,7 @@ public class Chase : IState
                 policeAI.LastPos = playercore.transform.position = randInsideCircle;
             }
         }
-        
+
         agent.SetDestination(policeAI.LastPos);
 
 
@@ -99,5 +101,5 @@ public class Chase : IState
     {
         yield return new WaitForSeconds(startChaseTime);
     }
-    
+
 }
